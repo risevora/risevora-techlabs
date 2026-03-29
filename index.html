@@ -4,9 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Risevora Techlabs | Learn. Build. Rise.</title>
+  <meta name="description" content="Risevora Techlabs offers live online training in C Language, Python, Embedded Systems, and Digital Marketing with practical learning and career-focused guidance." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     :root{
       --bg:#0b1020;
@@ -18,6 +20,7 @@
       --accent2:#6d7dff;
       --shadow:0 20px 60px rgba(0,0,0,0.28);
       --radius:24px;
+      --max:1200px;
     }
 
     *{
@@ -38,10 +41,22 @@
     }
 
     a{text-decoration:none;color:inherit;}
-    .container{width:90%;max-width:1200px;margin:auto;position:relative;z-index:2;}
+    img{max-width:100%;display:block;}
+    .container{
+      width:min(92%, var(--max));
+      margin:auto;
+      position:relative;
+      z-index:2;
+    }
 
     .blob{
-      position:absolute;border-radius:50%;filter:blur(90px);z-index:0;opacity:.6;animation:float 10s ease-in-out infinite;
+      position:absolute;
+      border-radius:50%;
+      filter:blur(90px);
+      z-index:0;
+      opacity:.55;
+      animation:float 10s ease-in-out infinite;
+      pointer-events:none;
     }
     .blob.one{width:320px;height:320px;background:rgba(109,125,255,.28);top:20px;left:-80px;}
     .blob.two{width:280px;height:280px;background:rgba(0,229,195,.18);right:-60px;top:240px;animation-delay:2s;}
@@ -53,43 +68,88 @@
     }
 
     header{
-      position:sticky;top:0;z-index:999;
-      background:rgba(11,16,32,.75);
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(11,16,32,.78);
       backdrop-filter:blur(14px);
       border-bottom:1px solid rgba(255,255,255,.08);
     }
 
     .nav{
-      display:flex;justify-content:space-between;align-items:center;padding:18px 0;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:16px 0;
+      gap:20px;
     }
 
     .logo{
-      font-size:1.6rem;font-weight:800;letter-spacing:.2px;
+      font-size:1.5rem;
+      font-weight:800;
+      letter-spacing:.2px;
+      white-space:nowrap;
     }
     .logo span{color:var(--accent);}
 
-    nav{display:flex;align-items:center;gap:24px;}
-    nav a{color:#d8d8df;font-size:.95rem;transition:.25s;}
-    nav a:hover{color:var(--accent);}
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:22px;
+    }
+
+    .nav-links a{
+      color:#d8d8df;
+      font-size:.95rem;
+      transition:.25s;
+    }
+    .nav-links a:hover{color:var(--accent);}
 
     .nav-cta{
       background:linear-gradient(135deg,var(--accent),var(--accent2));
-      color:#fff;padding:12px 18px;border-radius:14px;font-weight:600;
+      color:#fff;
+      padding:12px 18px;
+      border-radius:14px;
+      font-weight:600;
       box-shadow:0 10px 28px rgba(109,125,255,.22);
     }
 
+    .menu-toggle{
+      display:none;
+      font-size:1.8rem;
+      cursor:pointer;
+      user-select:none;
+    }
+
+    .mobile-menu{
+      display:none;
+      flex-direction:column;
+      gap:14px;
+      padding:16px 0 20px;
+    }
+
+    .mobile-menu a{
+      padding:12px 14px;
+      border-radius:14px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      color:#f0f0f5;
+    }
+
     .hero{
-      min-height:95vh;
+      min-height:92vh;
       display:grid;
       grid-template-columns:1.1fr .9fr;
       align-items:center;
-      gap:40px;
+      gap:48px;
       padding:70px 0 50px;
       position:relative;
     }
 
     .badge{
-      display:inline-flex;align-items:center;gap:8px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
       padding:10px 18px;
       background:rgba(255,255,255,.07);
       border:1px solid rgba(255,255,255,.08);
@@ -100,7 +160,11 @@
     }
 
     .hero h1{
-      font-size:3.3rem;line-height:1.12;font-weight:800;margin-bottom:18px;max-width:760px;
+      font-size:clamp(2.2rem, 5vw, 3.5rem);
+      line-height:1.12;
+      font-weight:800;
+      margin-bottom:18px;
+      max-width:760px;
     }
 
     .hero h1 span{
@@ -110,22 +174,36 @@
     }
 
     .hero p{
-      color:var(--muted);font-size:1.05rem;line-height:1.9;max-width:680px;margin-bottom:28px;
+      color:var(--muted);
+      font-size:1.02rem;
+      line-height:1.9;
+      max-width:680px;
+      margin-bottom:28px;
     }
 
     .hero-btns{
-      display:flex;flex-wrap:wrap;gap:14px;margin-bottom:26px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-bottom:24px;
     }
 
     .btn{
-      display:inline-block;padding:15px 24px;border-radius:16px;font-weight:600;transition:.3s ease;
+      display:inline-block;
+      padding:15px 24px;
+      border-radius:16px;
+      font-weight:600;
+      transition:.3s ease;
+      text-align:center;
     }
 
     .btn-primary{
       background:linear-gradient(135deg,var(--accent),var(--accent2));
-      color:#fff;box-shadow:0 16px 34px rgba(109,125,255,.22);
+      color:#fff;
+      box-shadow:0 16px 34px rgba(109,125,255,.22);
     }
     .btn-primary:hover{transform:translateY(-4px);}
+
     .btn-secondary{
       border:1px solid rgba(255,255,255,.12);
       background:rgba(255,255,255,.04);
@@ -134,13 +212,19 @@
     .btn-secondary:hover{background:rgba(255,255,255,.08);}
 
     .hero-mini{
-      display:flex;flex-wrap:wrap;gap:14px;margin-top:6px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:8px;
     }
 
     .mini-pill{
       background:rgba(255,255,255,.05);
       border:1px solid rgba(255,255,255,.08);
-      padding:12px 16px;border-radius:16px;color:#e8e8ee;font-size:.92rem;
+      padding:12px 16px;
+      border-radius:16px;
+      color:#e8e8ee;
+      font-size:.92rem;
     }
 
     .hero-form{
@@ -148,21 +232,27 @@
       border:1px solid rgba(255,255,255,.08);
       backdrop-filter:blur(18px);
       border-radius:30px;
-      padding:30px;
+      padding:28px;
       box-shadow:var(--shadow);
       position:relative;
       overflow:hidden;
+      width:100%;
     }
 
     .hero-form h3{
-      font-size:1.4rem;margin-bottom:10px;color:var(--accent);
+      font-size:1.35rem;
+      margin-bottom:10px;
+      color:var(--accent);
     }
 
     .hero-form p{
-      color:#d6d6df;font-size:.95rem;line-height:1.7;margin-bottom:22px;
+      color:#d6d6df;
+      font-size:.95rem;
+      line-height:1.7;
+      margin-bottom:20px;
     }
 
-    .form-group{margin-bottom:16px;}
+    .form-group{margin-bottom:14px;}
     .form-group input,.form-group select,.form-group textarea{
       width:100%;
       padding:14px 16px;
@@ -191,12 +281,13 @@
     }
 
     .hero-links{
-      display:flex;gap:12px;flex-wrap:wrap;margin-top:18px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin-top:16px;
     }
 
     .small-link{
-      flex:1;
-      min-width:140px;
       text-align:center;
       padding:12px 14px;
       border-radius:14px;
@@ -206,16 +297,22 @@
       color:#ececf3;
     }
 
-    section{padding:90px 0;position:relative;}
-    .section-title{text-align:center;margin-bottom:54px;}
-    .section-title h2{font-size:2.3rem;margin-bottom:14px;}
+    section{padding:88px 0;position:relative;}
+    .section-title{text-align:center;margin-bottom:50px;}
+    .section-title h2{
+      font-size:clamp(1.8rem, 4vw, 2.4rem);
+      margin-bottom:14px;
+    }
     .section-title p{
-      color:var(--muted);max-width:760px;margin:auto;line-height:1.9;
+      color:var(--muted);
+      max-width:760px;
+      margin:auto;
+      line-height:1.9;
     }
 
     .grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      grid-template-columns:repeat(4,1fr);
       gap:24px;
     }
 
@@ -251,22 +348,26 @@
       background:linear-gradient(135deg,var(--accent),var(--accent2));
     }
 
-    .card h3{font-size:1.2rem;margin-bottom:12px;}
+    .card h3{font-size:1.15rem;margin-bottom:12px;}
     .card p{color:#d5d5de;line-height:1.8;font-size:.95rem;}
 
-    .tabs{
-      max-width:980px;margin:auto;
-    }
-
+    .tabs{max-width:980px;margin:auto;}
     .tab-buttons{
-      display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:28px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      justify-content:center;
+      margin-bottom:28px;
     }
 
     .tab-btn{
-      padding:13px 18px;border-radius:16px;
+      padding:13px 18px;
+      border-radius:16px;
       border:1px solid rgba(255,255,255,.10);
       background:rgba(255,255,255,.05);
-      color:#fff;cursor:pointer;font-weight:600;
+      color:#fff;
+      cursor:pointer;
+      font-weight:600;
       transition:.25s;
     }
 
@@ -280,7 +381,7 @@
       background:rgba(255,255,255,.05);
       border:1px solid rgba(255,255,255,.08);
       border-radius:28px;
-      padding:32px;
+      padding:30px;
       box-shadow:var(--shadow);
     }
 
@@ -298,7 +399,7 @@
 
     .stats{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      grid-template-columns:repeat(4,1fr);
       gap:22px;
     }
 
@@ -329,6 +430,7 @@
       min-width:54px;height:54px;border-radius:16px;display:grid;place-items:center;
       background:linear-gradient(135deg,var(--accent),var(--accent2));
       font-weight:700;font-size:1.1rem;
+      flex-shrink:0;
     }
 
     .timeline-step h3{margin-bottom:8px;}
@@ -343,7 +445,7 @@
     }
     .testimonial.active{display:block;animation:fade .5s ease;}
     .testimonial p{
-      font-size:1.08rem;line-height:2;color:#ececf2;margin-bottom:18px;
+      font-size:1.05rem;line-height:2;color:#ececf2;margin-bottom:18px;
     }
     .testimonial h4{color:var(--accent);font-size:1rem;font-weight:600;}
 
@@ -370,10 +472,11 @@
     .faq-question{
       padding:22px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;
       font-weight:600;font-size:1rem;
+      gap:12px;
     }
 
     .faq-question span{
-      font-size:1.3rem;color:var(--accent);transition:.25s;
+      font-size:1.3rem;color:var(--accent);transition:.25s;flex-shrink:0;
     }
 
     .faq-answer{
@@ -393,14 +496,14 @@
       border-radius:34px;padding:56px 30px;text-align:center;box-shadow:var(--shadow);
     }
 
-    .cta-box h2{font-size:2.2rem;margin-bottom:16px;}
+    .cta-box h2{font-size:clamp(1.8rem, 4vw, 2.4rem);margin-bottom:16px;}
     .cta-box p{
       color:#d7d7df;max-width:760px;margin:0 auto 28px;line-height:1.9;
     }
 
     .contact-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      grid-template-columns:repeat(4,1fr);
       gap:24px;
     }
 
@@ -416,14 +519,17 @@
     .contact-card p{color:#d8d8df;line-height:1.8;}
 
     .footer{
-      padding:40px 0 60px;text-align:center;color:#a8a8b5;font-size:.95rem;
+      padding:40px 0 90px;
+      text-align:center;
+      color:#a8a8b5;
+      font-size:.95rem;
     }
 
     .whatsapp-float{
-      position:fixed;right:22px;bottom:22px;z-index:9999;
-      width:62px;height:62px;border-radius:50%;
+      position:fixed;right:18px;bottom:90px;z-index:9999;
+      width:58px;height:58px;border-radius:50%;
       background:linear-gradient(135deg,#25d366,#14b956);
-      display:grid;place-items:center;font-size:1.7rem;
+      display:grid;place-items:center;font-size:1.6rem;
       box-shadow:0 18px 40px rgba(37,211,102,.32);
       animation:pulse 2s infinite;
     }
@@ -438,7 +544,7 @@
       position:fixed;
       left:50%;
       transform:translateX(-50%);
-      bottom:18px;
+      bottom:16px;
       z-index:9998;
       background:rgba(11,16,32,.88);
       border:1px solid rgba(255,255,255,.10);
@@ -479,28 +585,208 @@
       opacity:1;transform:translateY(0);
     }
 
-    @media(max-width:980px){
+    /* ===== TABLET ===== */
+    @media (max-width: 1024px){
       .hero{
         grid-template-columns:1fr;
+        gap:32px;
+        min-height:auto;
         padding-top:50px;
       }
-      .hero h1{font-size:2.6rem;}
-      nav a:not(.nav-cta){display:none;}
+
+      .hero-left,.hero-right{
+        width:100%;
+      }
+
+      .hero-mini,.hero-btns{
+        justify-content:center;
+      }
+
+      .hero-left{
+        text-align:center;
+      }
+
+      .hero-form{
+        max-width:640px;
+        margin:auto;
+      }
+
+      .grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .stats{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .contact-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
     }
 
-    @media(max-width:768px){
-      .hero h1{font-size:2.15rem;}
-      .section-title h2{font-size:1.9rem;}
-      .cta-box h2{font-size:1.8rem;}
-      .timeline-step{padding:20px;}
-      .testimonial{padding:28px 22px;}
+    /* ===== MOBILE ===== */
+    @media (max-width: 768px){
+      .nav-links{display:none;}
+      .menu-toggle{display:block;}
+
+      .mobile-menu.show{display:flex;}
+
+      .nav{
+        padding:14px 0;
+      }
+
+      .logo{
+        font-size:1.25rem;
+      }
+
+      .hero{
+        padding:36px 0 30px;
+      }
+
+      .hero p{
+        font-size:.96rem;
+      }
+
+      .hero-btns{
+        flex-direction:column;
+      }
+
+      .hero-btns .btn{
+        width:100%;
+      }
+
+      .hero-mini{
+        flex-direction:column;
+      }
+
+      .mini-pill{
+        width:100%;
+      }
+
+      .hero-form{
+        padding:22px 18px;
+        border-radius:24px;
+      }
+
+      .hero-links{
+        grid-template-columns:1fr;
+      }
+
+      .grid{
+        grid-template-columns:1fr;
+      }
+
+      .tab-buttons{
+        overflow-x:auto;
+        flex-wrap:nowrap;
+        justify-content:flex-start;
+        padding-bottom:6px;
+        scrollbar-width:none;
+      }
+      .tab-buttons::-webkit-scrollbar{display:none;}
+
+      .tab-btn{
+        white-space:nowrap;
+        flex-shrink:0;
+      }
+
+      .tab-content{
+        padding:22px 18px;
+        border-radius:22px;
+      }
+
+      .stats{
+        grid-template-columns:1fr;
+      }
+
+      .timeline-step{
+        flex-direction:column;
+        padding:20px;
+      }
+
+      .testimonial{
+        padding:26px 18px;
+      }
+
+      .faq-question{
+        font-size:.95rem;
+        padding:18px 18px;
+      }
+
+      .faq-answer{
+        padding:0 18px;
+      }
+
+      .faq-item.active .faq-answer{
+        padding:0 18px 18px;
+      }
+
+      .cta-box{
+        padding:34px 20px;
+        border-radius:26px;
+      }
+
+      .contact-grid{
+        grid-template-columns:1fr;
+      }
+
+      .contact-card{
+        padding:22px;
+      }
+
       .sticky-bottom-cta{
         width:94%;
-        bottom:14px;
+        bottom:12px;
+        padding:8px;
       }
+
       .sticky-bottom-cta a{
         font-size:.88rem;
         padding:12px 10px;
+      }
+
+      .whatsapp-float{
+        width:52px;
+        height:52px;
+        font-size:1.4rem;
+        right:14px;
+        bottom:84px;
+      }
+
+      .footer{
+        padding-bottom:100px;
+      }
+    }
+
+    /* ===== SMALL PHONES ===== */
+    @media (max-width: 480px){
+      .hero h1{
+        font-size:1.95rem;
+      }
+
+      .section-title{
+        margin-bottom:38px;
+      }
+
+      .section-title p{
+        font-size:.95rem;
+      }
+
+      .btn{
+        font-size:.95rem;
+        padding:14px 16px;
+      }
+
+      .card{
+        padding:22px;
+      }
+
+      .stat{
+        padding:28px 18px;
+      }
+
+      .stat h3{
+        font-size:1.9rem;
       }
     }
   </style>
@@ -512,20 +798,33 @@
   <div class="blob three"></div>
 
   <header>
-    <div class="container nav">
-      <div class="logo">Risevora <span>Techlabs</span></div>
-      <nav>
-        <a href="#courses">Courses</a>
-        <a href="#programs">Programs</a>
-        <a href="#journey">Journey</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact" class="nav-cta">Enquire Now</a>
-      </nav>
+    <div class="container">
+      <div class="nav">
+        <div class="logo">Risevora <span>Techlabs</span></div>
+
+        <div class="nav-links">
+          <a href="#courses">Courses</a>
+          <a href="#programs">Programs</a>
+          <a href="#journey">Journey</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact" class="nav-cta">Enquire Now</a>
+        </div>
+
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      </div>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#courses" onclick="closeMenu()">Courses</a>
+        <a href="#programs" onclick="closeMenu()">Programs</a>
+        <a href="#journey" onclick="closeMenu()">Journey</a>
+        <a href="#faq" onclick="closeMenu()">FAQ</a>
+        <a href="#contact" onclick="closeMenu()">Enquire Now</a>
+      </div>
     </div>
   </header>
 
   <section class="hero container">
-    <div class="fade-up">
+    <div class="hero-left fade-up">
       <div class="badge">🚀 Learn. Build. Rise.</div>
       <h1>Learn <span>In-Demand Tech Skills</span>. Build Real Careers.</h1>
       <p>
@@ -544,11 +843,11 @@
       </div>
     </div>
 
-    <div class="hero-form fade-up">
+    <div class="hero-right hero-form fade-up">
       <h3>Get Free Course Guidance</h3>
       <p>Fill out your details to receive course info, fee structure, batch timings, and demo class details.</p>
 
-      <form action="https://forms.gle/BKCxaCLbTh4VPpmJ9" method="GET" target="_blank">
+      <form action="YOUR_GOOGLE_FORM_LINK" method="GET" target="_blank">
         <div class="form-group">
           <input type="text" placeholder="Your Name" required>
         </div>
@@ -618,10 +917,10 @@
 
     <div class="tabs">
       <div class="tab-buttons">
-        <button class="tab-btn active" onclick="openTab('clang')">C Language</button>
-        <button class="tab-btn" onclick="openTab('python')">Python</button>
-        <button class="tab-btn" onclick="openTab('embedded')">Embedded Systems</button>
-        <button class="tab-btn" onclick="openTab('marketing')">Digital Marketing</button>
+        <button class="tab-btn active" onclick="openTab(event, 'clang')">C Language</button>
+        <button class="tab-btn" onclick="openTab(event, 'python')">Python</button>
+        <button class="tab-btn" onclick="openTab(event, 'embedded')">Embedded Systems</button>
+        <button class="tab-btn" onclick="openTab(event, 'marketing')">Digital Marketing</button>
       </div>
 
       <div id="clang" class="tab-content active">
@@ -811,12 +1110,12 @@
     <div class="contact-grid">
       <div class="contact-card">
         <h3>📞 Call Us</h3>
-        <p>9121990099</p>
+        <p>YOUR_PHONE</p>
       </div>
 
       <div class="contact-card">
         <h3>📧 Email</h3>
-        <p>risevoratechlabs@gmail.com</p>
+        <p>YOUR_EMAIL</p>
       </div>
 
       <div class="contact-card">
@@ -826,7 +1125,7 @@
 
       <div class="contact-card">
         <h3>📝 Enquiry Form</h3>
-        <p><a href="https://forms.gle/BKCxaCLbTh4VPpmJ9" target="_blank">Fill out your details here</a></p>
+        <p><a href="YOUR_GOOGLE_FORM_LINK" target="_blank">Fill out your details here</a></p>
       </div>
     </div>
   </section>
@@ -835,14 +1134,22 @@
     © 2026 Risevora Techlabs. Learn. Build. Rise.
   </div>
 
-  <a href="https://wa.me/9121990099" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">💬</a>
+  <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">💬</a>
 
   <div class="sticky-bottom-cta">
-    <a href="https://wa.me/9121990099" target="_blank" class="secondary">WhatsApp Us</a>
+    <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" target="_blank" class="secondary">WhatsApp Us</a>
     <a href="#contact" class="primary">Get Course Details</a>
   </div>
 
   <script>
+    function toggleMenu(){
+      document.getElementById('mobileMenu').classList.toggle('show');
+    }
+
+    function closeMenu(){
+      document.getElementById('mobileMenu').classList.remove('show');
+    }
+
     const faders = document.querySelectorAll('.fade-up');
     const observer = new IntersectionObserver((entries)=>{
       entries.forEach(entry=>{
@@ -850,7 +1157,7 @@
           entry.target.classList.add('visible');
         }
       });
-    },{threshold:0.18});
+    },{threshold:0.15});
     faders.forEach(el=>observer.observe(el));
 
     const counters = document.querySelectorAll('.counter');
@@ -860,10 +1167,10 @@
       counters.forEach(counter=>{
         const target = +counter.getAttribute('data-target');
         const update = ()=>{
-          const current = +counter.innerText;
-          const increment = Math.ceil(target / 70);
+          const current = parseInt(counter.innerText) || 0;
+          const increment = Math.max(1, Math.ceil(target / 70));
           if(current < target){
-            counter.innerText = current + increment;
+            counter.innerText = Math.min(current + increment, target);
             setTimeout(update, 28);
           } else {
             counter.innerText = target + '+';
@@ -884,11 +1191,11 @@
     },{threshold:0.3});
     if(statsSection) statsObserver.observe(statsSection);
 
-    function openTab(tabId){
+    function openTab(evt, tabId){
       document.querySelectorAll('.tab-content').forEach(tab=>tab.classList.remove('active'));
       document.querySelectorAll('.tab-btn').forEach(btn=>btn.classList.remove('active'));
       document.getElementById(tabId).classList.add('active');
-      event.target.classList.add('active');
+      evt.currentTarget.classList.add('active');
     }
 
     const faqItems = document.querySelectorAll('.faq-item');
