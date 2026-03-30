@@ -1,245 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Risevora Techlabs</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risevora Techlabs | Professional Training</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0b1020;
+            --card-bg: #141a33;
+            --primary: #00e5c3;
+            --secondary: #6d7dff;
+            --text-main: #ffffff;
+            --text-dim: #c9c9d4;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+        * { box-sizing: border-box; }
 
-<style>
-body{
-  margin:0;
-  font-family:'Poppins',sans-serif;
-  background:#0b1020;
-  color:#fff;
-}
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
 
-.container{
-  width:92%;
-  max-width:1100px;
-  margin:auto;
-}
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding-bottom: 50px;
+        }
 
-/* HERO */
-.hero{
-  padding:40px 0 30px;
-  text-align:center;
-}
+        /* HERO SECTION */
+        .hero {
+            padding: 60px 0 40px;
+            text-align: center;
+        }
 
-.logo{
-  font-size:1.4rem;
-  font-weight:700;
-}
-.logo span{color:#00e5c3;}
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            letter-spacing: -1px;
+        }
+        .logo span { color: var(--primary); }
 
-.hero h1{
-  font-size:clamp(1.8rem,5vw,2.5rem);
-  margin:15px 0;
-}
+        .hero h1 {
+            font-size: clamp(2rem, 8vw, 3.5rem);
+            margin: 0 0 20px;
+            line-height: 1.1;
+            background: linear-gradient(to right, #fff, #888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-.hero p{
-  color:#c9c9d4;
-  line-height:1.7;
-  font-size:.95rem;
-}
+        .hero p {
+            color: var(--text-dim);
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+        }
 
-.btn{
-  display:block;
-  width:100%;
-  padding:14px;
-  border-radius:12px;
-  margin-top:12px;
-  text-align:center;
-  font-weight:600;
-}
+        /* BUTTONS */
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
 
-.primary{
-  background:linear-gradient(135deg,#00e5c3,#6d7dff);
-}
+        .btn {
+            text-decoration: none;
+            padding: 16px 30px;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: transform 0.2s, opacity 0.2s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
 
-.secondary{
-  background:#1a2038;
-}
+        .btn:active { transform: scale(0.98); }
 
-/* COURSES */
-.section{
-  padding:40px 0;
-}
+        .primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #000;
+        }
 
-.section h2{
-  text-align:center;
-  margin-bottom:25px;
-}
+        .secondary {
+            background: rgba(255,255,255,0.05);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
 
-.grid{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:15px;
-}
+        /* FORM BOX */
+        .form-container {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 24px;
+            border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            text-align: left;
+        }
 
-.card{
-  background:#141a33;
-  padding:18px;
-  border-radius:16px;
-}
+        .form-container h3 { margin-top: 0; color: var(--primary); }
 
-.card h3{
-  margin-bottom:8px;
-}
+        .form-container input, .form-container select {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.1);
+            background: #0b1020;
+            color: #fff;
+            font-size: 1rem;
+        }
 
-/* FORM */
-.form{
-  background:#141a33;
-  padding:20px;
-  border-radius:18px;
-}
+        /* COURSE GRID */
+        .section-title { text-align: center; margin: 60px 0 30px; font-size: 2rem; }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
 
-.form input,.form select{
-  width:100%;
-  padding:12px;
-  margin-bottom:10px;
-  border-radius:10px;
-  border:none;
-  background:#0b1020;
-  color:#fff;
-}
+        .card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.03);
+            transition: border 0.3s;
+        }
+        .card:hover { border-color: var(--primary); }
+        .card h3 { margin: 0 0 10px; color: var(--primary); }
 
-/* CONTACT */
-.contact{
-  display:grid;
-  gap:12px;
-}
+        /* CONTACT SECTION */
+        .contact-bar {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-top: 40px;
+        }
+        .contact-item {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
 
-.contact div{
-  background:#141a33;
-  padding:14px;
-  border-radius:12px;
-  text-align:center;
-}
+        /* RESPONSIVE QUERIES */
+        @media (min-width: 600px) {
+            .btn-group { flex-direction: row; justify-content: center; }
+            .contact-bar { grid-template-columns: repeat(3, 1fr); }
+        }
 
-/* FOOTER */
-.footer{
-  text-align:center;
-  font-size:.8rem;
-  color:#aaa;
-  padding:20px 0;
-}
-
-/* TABLET */
-@media(min-width:768px){
-  .grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .btn{
-    width:auto;
-    display:inline-block;
-    margin-right:10px;
-  }
-}
-
-/* DESKTOP */
-@media(min-width:1024px){
-  .hero{
-    text-align:left;
-  }
-
-  .hero-flex{
-    display:flex;
-    gap:40px;
-    align-items:center;
-  }
-
-  .hero-left,.hero-right{
-    flex:1;
-  }
-}
-</style>
+        @media (min-width: 1024px) {
+            .hero { text-align: left; padding: 100px 0; }
+            .hero-flex { display: flex; align-items: center; gap: 60px; }
+            .hero-left, .hero-right { flex: 1; }
+            .hero p { margin: 0 0 40px 0; }
+            .btn-group { justify-content: flex-start; }
+        }
+    </style>
 </head>
-
 <body>
 
 <div class="container">
+    <div class="hero">
+        <div class="logo">Risevora <span>Techlabs</span></div>
+        
+        <div class="hero-flex">
+            <div class="hero-left">
+                <h1>Learn In-Demand Tech Skills.</h1>
+                <p>Expert-led training in C, Python, Embedded Systems, and Digital Marketing designed to get you hired.</p>
+                
+                <div class="btn-group">
+                    <a href="#form" class="btn primary">Get Course Details</a>
+                    <a href="https://wa.me/9121990099" class="btn secondary">💬 WhatsApp Us</a>
+                </div>
+            </div>
 
-  <!-- HERO -->
-  <div class="hero">
-    <div class="logo">Risevora <span>Techlabs</span></div>
-
-    <div class="hero-flex">
-      <div class="hero-left">
-        <h1>Learn In-Demand Tech Skills. Build Real Careers.</h1>
-        <p>Learn C Language, Python, Embedded Systems, and Digital Marketing with practical training and career guidance.</p>
-
-        <a href="https://wa.me/9121990099" class="btn secondary">💬 WhatsApp Us</a>
-        <a href="#form" class="btn primary">Get Course Details</a>
-      </div>
-
-      <div class="hero-right">
-        <div class="form" id="form">
-          <h3>Get Free Guidance</h3>
-
-          <form action="https://forms.gle/BKCxaCLbTh4VPpmJ9" target="_blank">
-            <input type="text" placeholder="Your Name" required>
-            <input type="tel" placeholder="Phone Number" required>
-
-            <select required>
-              <option>Select Course</option>
-              <option>C Language</option>
-              <option>Python</option>
-              <option>Embedded Systems</option>
-              <option>Digital Marketing</option>
-            </select>
-
-            <button class="btn primary">Submit</button>
-          </form>
+            <div class="hero-right">
+                <div class="form-container" id="form">
+                    <h3>Inquiry Form</h3>
+                    <form action="https://forms.gle/BKCxaCLbTh4VPpmJ9" target="_blank">
+                        <input type="text" placeholder="Full Name" required>
+                        <input type="tel" placeholder="Mobile Number" required>
+                        <select required>
+                            <option value="">Select Course</option>
+                            <option>C Language</option>
+                            <option>Python</option>
+                            <option>Embedded Systems</option>
+                            <option>Digital Marketing</option>
+                        </select>
+                        <button type="submit" class="btn primary" style="width:100%">Submit Inquiry</button>
+                    </form>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 
-  <!-- COURSES -->
-  <div class="section">
-    <h2>Our Courses</h2>
-
+    <h2 class="section-title">Professional Courses</h2>
     <div class="grid">
-      <div class="card">
-        <h3>C Language</h3>
-        <p>Strong programming foundation and logic building.</p>
-      </div>
-
-      <div class="card">
-        <h3>Python</h3>
-        <p>Learn coding with real-world examples and projects.</p>
-      </div>
-
-      <div class="card">
-        <h3>Embedded Systems</h3>
-        <p>Build smart hardware and IoT solutions.</p>
-      </div>
-
-      <div class="card">
-        <h3>Digital Marketing</h3>
-        <p>Grow brands and businesses online.</p>
-      </div>
+        <div class="card">
+            <h3>C Language</h3>
+            <p>Master the core of programming. Focus on data structures, memory management, and logic.</p>
+        </div>
+        <div class="card">
+            <h3>Python</h3>
+            <p>From basics to advanced automation. Ideal for Data Science, AI, and Web Development.</p>
+        </div>
+        <div class="card">
+            <h3>Embedded Systems</h3>
+            <p>Hardcore hardware-software integration. Learn microcontrollers, IoT, and RTOS.</p>
+        </div>
+        <div class="card">
+            <h3>Digital Marketing</h3>
+            <p>Modern growth strategies. SEO, Performance Marketing, and Social Media Branding.</p>
+        </div>
     </div>
-  </div>
 
-  <!-- CONTACT -->
-  <div class="section">
-    <h2>Contact Us</h2>
-
-    <div class="contact">
-      <div>📞 9121990099</div>
-      <div>📧 risevoratechlabs@gmail.com</div>
-      <div><a href="https://wa.me/9121990099">💬 WhatsApp Chat</a></div>
+    <h2 class="section-title">Contact</h2>
+    <div class="contact-bar">
+        <div class="contact-item">📞 +91 91219 90099</div>
+        <div class="contact-item">📧 risevoratechlabs@gmail.com</div>
+        <a href="https://wa.me/9121990099" class="contact-item" style="border: 1px solid var(--primary);">💬 Live Chat</a>
     </div>
-  </div>
 
-  <div class="footer">
-    © 2026 Risevora Techlabs
-  </div>
-
+    <div style="text-align:center; padding: 40px 0; color: #555; font-size: 0.8rem;">
+        © 2026 Risevora Techlabs | All Rights Reserved
+    </div>
 </div>
 
 </body>
