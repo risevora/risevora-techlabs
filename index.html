@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Risevora Techlabs | Live Online Training in C, Python, Embedded Systems & Digital Marketing</title>
+  <title>Risevora Techlabs | Trainer-Led Live Online Training in C, Python, Embedded Systems & Digital Marketing</title>
 
-  <meta name="description" content="Risevora Techlabs offers live online training sessions in C Language, Python, Embedded Systems, and Digital Marketing. Learn practical, career-focused skills with expert guidance." />
-  <meta name="keywords" content="live online training, C Language course, Python training, Embedded Systems course, Digital Marketing course, online trainer, tech institute, Risevora Techlabs" />
+  <meta name="description" content="Risevora Techlabs is a trainer-led online training institute offering live sessions in C Language, Python, Embedded Systems, and Digital Marketing. Learn practical, career-focused skills with expert guidance." />
+  <meta name="keywords" content="trainer-led online training, live online classes, C Language course, Python training, Embedded Systems course, Digital Marketing course, Risevora Techlabs" />
   <meta name="author" content="Risevora Techlabs" />
 
-  <meta property="og:title" content="Risevora Techlabs | Learn In-Demand Tech Skills Live Online" />
-  <meta property="og:description" content="Join live online training sessions in C Language, Python, Embedded Systems, and Digital Marketing with Risevora Techlabs." />
+  <meta property="og:title" content="Risevora Techlabs | Trainer-Led Live Online Training" />
+  <meta property="og:description" content="Join trainer-led live online training sessions in C Language, Python, Embedded Systems, and Digital Marketing with Risevora Techlabs." />
   <meta property="og:type" content="website" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,6 +23,10 @@
       padding:0;
       box-sizing:border-box;
       font-family:'Poppins',sans-serif;
+    }
+
+    html{
+      scroll-behavior:smooth;
     }
 
     body{
@@ -47,28 +51,28 @@
 
     .glow{
       position:absolute;
-      width:240px;
-      height:240px;
+      width:260px;
+      height:260px;
       border-radius:50%;
       background:rgba(0,229,195,0.08);
-      filter:blur(80px);
+      filter:blur(90px);
       z-index:0;
     }
 
     .glow.one{top:20px;left:-80px;}
-    .glow.two{bottom:50px;right:-80px;background:rgba(109,125,255,0.12);}
+    .glow.two{bottom:100px;right:-80px;background:rgba(109,125,255,0.12);}
 
     /* HERO */
     .hero{
-      padding:60px 0 45px;
+      padding:55px 0 50px;
       position:relative;
     }
 
     .logo{
-      font-size:1.7rem;
+      font-size:1.8rem;
       font-weight:800;
       text-align:center;
-      margin-bottom:25px;
+      margin-bottom:26px;
       letter-spacing:.3px;
     }
 
@@ -77,7 +81,7 @@
     .hero-flex{
       display:flex;
       flex-direction:column;
-      gap:28px;
+      gap:30px;
       align-items:center;
     }
 
@@ -93,14 +97,14 @@
       padding:9px 18px;
       border-radius:40px;
       font-size:.9rem;
-      margin-bottom:20px;
+      margin-bottom:18px;
       backdrop-filter:blur(12px);
     }
 
     .hero h1{
-      font-size:clamp(2rem,5vw,3.3rem);
-      line-height:1.18;
-      margin:10px 0 18px;
+      font-size:clamp(2.1rem,5vw,3.4rem);
+      line-height:1.15;
+      margin:10px 0 16px;
       font-weight:800;
     }
 
@@ -114,10 +118,14 @@
       color:#c9c9d4;
       font-size:1rem;
       max-width:760px;
+      margin:auto;
     }
 
     .hero-buttons{
-      margin-top:22px;
+      margin-top:24px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
     }
 
     .btn{
@@ -125,7 +133,6 @@
       width:100%;
       padding:14px 18px;
       border-radius:14px;
-      margin-top:12px;
       text-align:center;
       font-weight:600;
       font-size:.95rem;
@@ -147,6 +154,22 @@
       backdrop-filter:blur(10px);
     }
 
+    .hero-image{
+      width:100%;
+      margin-top:28px;
+      border-radius:24px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.08);
+      box-shadow:0 20px 50px rgba(0,0,0,0.22);
+    }
+
+    .hero-image img{
+      width:100%;
+      display:block;
+      object-fit:cover;
+      max-height:420px;
+    }
+
     /* FORM */
     .form{
       background:rgba(255,255,255,0.06);
@@ -160,7 +183,7 @@
 
     .form h3{
       margin-top:0;
-      margin-bottom:15px;
+      margin-bottom:10px;
       color:#00e5c3;
       font-size:1.35rem;
     }
@@ -190,7 +213,7 @@
 
     /* SECTION */
     .section{
-      padding:52px 0;
+      padding:55px 0;
     }
 
     .section h2{
@@ -203,7 +226,7 @@
       text-align:center;
       color:#c9c9d4;
       max-width:920px;
-      margin:0 auto 32px;
+      margin:0 auto 34px;
     }
 
     /* GRID */
@@ -217,7 +240,7 @@
       background:rgba(255,255,255,0.06);
       border:1px solid rgba(255,255,255,0.08);
       backdrop-filter:blur(16px);
-      padding:24px;
+      padding:22px;
       border-radius:22px;
       transition:.35s ease;
       box-shadow:0 10px 30px rgba(0,0,0,0.12);
@@ -227,6 +250,14 @@
       transform:translateY(-8px);
       border-color:rgba(0,229,195,0.25);
       box-shadow:0 18px 40px rgba(0,0,0,0.20);
+    }
+
+    .card img{
+      width:100%;
+      height:190px;
+      object-fit:cover;
+      border-radius:16px;
+      margin-bottom:16px;
     }
 
     .card h3{
@@ -240,7 +271,7 @@
       font-size:.96rem;
     }
 
-    /* FEATURE POINTS */
+    /* POINTS */
     .points{
       display:grid;
       grid-template-columns:1fr;
@@ -258,6 +289,35 @@
     .point:hover{
       transform:translateY(-4px);
       border-color:rgba(0,229,195,0.22);
+    }
+
+    /* TRAINER SECTION */
+    .trainer-box{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:24px;
+      align-items:center;
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      padding:24px;
+      border-radius:24px;
+    }
+
+    .trainer-box img{
+      width:100%;
+      border-radius:22px;
+      object-fit:cover;
+      max-height:360px;
+    }
+
+    .trainer-box h3{
+      color:#00e5c3;
+      margin-bottom:12px;
+      font-size:1.5rem;
+    }
+
+    .trainer-box p{
+      color:#d8d8df;
     }
 
     /* FAQ */
@@ -306,22 +366,23 @@
       border-color:rgba(0,229,195,0.22);
     }
 
-    /* LIVE BADGES */
-    .live-strip{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:14px;
-      margin-top:24px;
+    /* CTA BAND */
+    .cta-band{
+      text-align:center;
+      background:linear-gradient(135deg, rgba(0,229,195,0.10), rgba(109,125,255,0.10));
+      border:1px solid rgba(255,255,255,0.08);
+      padding:28px;
+      border-radius:24px;
     }
 
-    .live-box{
-      background:rgba(255,255,255,0.05);
-      border:1px solid rgba(255,255,255,0.08);
-      padding:16px;
-      border-radius:18px;
-      text-align:center;
-      font-weight:500;
-      color:#e9e9ef;
+    .cta-band h3{
+      font-size:1.8rem;
+      margin-bottom:10px;
+    }
+
+    .cta-band p{
+      color:#d8d8df;
+      margin-bottom:18px;
     }
 
     /* FOOTER */
@@ -336,16 +397,30 @@
     @media(min-width:768px){
       .hero-flex{
         flex-direction:row;
-        align-items:center;
+        align-items:flex-start;
       }
 
       .hero-left{
-        flex:1;
+        flex:1.15;
         text-align:left;
       }
 
+      .hero p{
+        margin:0;
+      }
+
+      .hero-buttons{
+        flex-direction:row;
+        flex-wrap:wrap;
+      }
+
+      .btn{
+        width:auto;
+        display:inline-block;
+      }
+
       .form{
-        flex:1;
+        flex:0.95;
       }
 
       .grid{
@@ -356,14 +431,8 @@
         grid-template-columns:1fr 1fr;
       }
 
-      .live-strip{
-        grid-template-columns:1fr 1fr 1fr;
-      }
-
-      .btn{
-        width:auto;
-        display:inline-block;
-        margin-right:10px;
+      .trainer-box{
+        grid-template-columns:1fr 1fr;
       }
 
       .contact{
@@ -373,10 +442,6 @@
 
     /* DESKTOP */
     @media(min-width:1024px){
-      .grid{
-        grid-template-columns:1fr 1fr;
-      }
-
       .contact{
         grid-template-columns:1fr 1fr 1fr 1fr;
       }
@@ -396,27 +461,26 @@
 
       <div class="hero-flex">
         <div class="hero-left">
-          <div class="badge">🚀 Live Online Training Sessions</div>
-          <h1>Learn <span>In-Demand Tech Skills</span> with Live Online Training</h1>
+          <div class="badge">🚀 Trainer-Led Live Online Training</div>
+          <h1>Learn <span>In-Demand Tech Skills</span> Through Live Interactive Sessions</h1>
           <p>
-            Risevora Techlabs is a live online training institute helping students, freshers, and aspiring professionals build practical and career-focused skills in C Language, Python, Embedded Systems, and Digital Marketing. Learn from interactive live sessions designed to improve understanding, confidence, and future readiness.
+            Risevora Techlabs is a trainer-led online training institute offering live sessions in C Language, Python, Embedded Systems, and Digital Marketing. Designed for students, freshers, beginners, and aspiring professionals, our live training programs focus on practical learning, concept clarity, and career-ready skill development.
           </p>
 
           <div class="hero-buttons">
-            <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" class="btn secondary">💬 Chat on WhatsApp</a>
-            <a href="#enquiry" class="btn primary">Get Course Details</a>
+            <a href="YOUR_GOOGLE_FORM_LINK" target="_blank" class="btn primary">Get Course Details</a>
+            <a href="YOUR_GOOGLE_FORM_LINK" target="_blank" class="btn secondary">Book Free Demo</a>
+            <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" target="_blank" class="btn secondary">Chat on WhatsApp</a>
           </div>
 
-          <div class="live-strip">
-            <div class="live-box">💻 Live Interactive Sessions</div>
-            <div class="live-box">🛠 Practical Learning Focus</div>
-            <div class="live-box">🎯 Career-Oriented Guidance</div>
+          <div class="hero-image">
+            <img src="YOUR_HERO_IMAGE" alt="Risevora Techlabs Live Online Training">
           </div>
         </div>
 
         <div class="form" id="enquiry">
-          <h3>Get Free Course Guidance</h3>
-          <p>Fill in your details to receive course info, training details, and live session guidance.</p>
+          <h3>Talk to a Trainer</h3>
+          <p>Get course details, batch information, and guidance on choosing the right training program.</p>
           <form action="YOUR_GOOGLE_FORM_LINK" target="_blank">
             <input type="text" placeholder="Your Name" required>
             <input type="tel" placeholder="Phone Number" required>
@@ -435,147 +499,110 @@
 
     <!-- ABOUT -->
     <section class="section">
-      <h2>About Risevora Techlabs</h2>
+      <h2>Trainer-Led Online Learning That Helps You Build Real Skills</h2>
       <p class="section-intro">
-        Risevora Techlabs is a modern live online training institute created to help learners build practical, relevant, and future-ready skills through interactive teaching and concept-based learning. We believe that strong technical and digital skills are best developed through clarity, structured guidance, and active engagement — which is why our live online sessions are designed to support better learning outcomes.
+        Risevora Techlabs is built for learners who want more than passive video content. Our training is delivered through live trainer-led online sessions that help students and beginners learn in a structured, interactive, and practical way. Instead of learning in isolation, learners get guided support, clearer explanations, and a better understanding of concepts through live instruction.
       </p>
       <p class="section-intro">
-        Whether you want to strengthen your programming foundation, explore embedded technology, or learn digital growth skills, Risevora Techlabs provides live online training programs that focus on real understanding rather than passive learning.
+        Whether you are learning programming for the first time, exploring embedded technology, or building digital growth skills, our live online training model is designed to improve engagement, confidence, and learning outcomes.
       </p>
+    </section>
+
+    <!-- WHY LIVE -->
+    <section class="section">
+      <h2>Why Live Trainer-Led Sessions Work Better</h2>
+      <div class="points">
+        <div class="point">✔ Better concept clarity through live explanation</div>
+        <div class="point">✔ More engaging than passive recorded content</div>
+        <div class="point">✔ Structured learning with trainer guidance</div>
+        <div class="point">✔ Improved motivation and consistency</div>
+        <div class="point">✔ Real-time doubt support and interaction</div>
+        <div class="point">✔ Better confidence through guided learning</div>
+      </div>
     </section>
 
     <!-- COURSES -->
     <section class="section">
       <h2>Our Live Online Training Programs</h2>
       <p class="section-intro">
-        Explore practical, career-focused live training programs designed to help learners build strong foundations and valuable skills.
+        Explore practical and career-focused live online training programs designed to help learners build strong foundations and valuable future-ready skills.
       </p>
 
       <div class="grid">
         <div class="card">
+          <img src="YOUR_COURSE_IMAGE_1" alt="C Language Training">
           <h3>C Language Training</h3>
           <p>
-            Build a strong programming base with our live C Language training sessions. This course helps learners understand core programming concepts, logic building, syntax, structured coding, and problem-solving techniques that support long-term technical growth.
+            Build a strong programming foundation through live C Language training sessions that help learners understand syntax, logic building, structured coding, and core programming concepts essential for technical growth.
           </p>
         </div>
 
         <div class="card">
+          <img src="YOUR_COURSE_IMAGE_2" alt="Python Training">
           <h3>Python Training</h3>
           <p>
-            Learn Python through live online sessions designed for clarity and practical understanding. Python is one of the most widely used and beginner-friendly programming languages, making it highly valuable for learners starting their coding journey.
+            Learn Python in a trainer-led live environment that makes programming easier to understand. Our Python training helps learners build confidence in coding and develop practical problem-solving skills.
           </p>
         </div>
 
         <div class="card">
+          <img src="YOUR_COURSE_IMAGE_3" alt="Embedded Systems Training">
           <h3>Embedded Systems Training</h3>
           <p>
-            Understand how hardware and software work together through our Embedded Systems live training program. This course is useful for learners interested in electronics, automation, smart devices, and system-level technology concepts.
+            Explore the world of smart devices, electronics, and system-level technology through live Embedded Systems training designed for learners interested in hardware, automation, and IoT concepts.
           </p>
         </div>
 
         <div class="card">
+          <img src="YOUR_COURSE_IMAGE_4" alt="Digital Marketing Training">
           <h3>Digital Marketing Training</h3>
           <p>
-            Learn how modern brands and businesses grow online through our live Digital Marketing training sessions. This program helps learners understand digital visibility, online growth strategies, content-driven communication, and business-focused digital skills.
+            Learn how businesses grow online through trainer-led Digital Marketing sessions covering modern online visibility, branding, digital communication, and growth-oriented marketing skills.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- WHY CHOOSE -->
+    <!-- TRAINER-LED SECTION -->
     <section class="section">
-      <h2>Why Learn with Risevora Techlabs?</h2>
-      <div class="points">
-        <div class="point">✔ Live online interactive training sessions</div>
-        <div class="point">✔ Beginner-friendly learning environment</div>
-        <div class="point">✔ Practical and concept-based teaching</div>
-        <div class="point">✔ Skill-building with real understanding</div>
-        <div class="point">✔ Structured learning for students and freshers</div>
-        <div class="point">✔ Career-focused training approach</div>
-        <div class="point">✔ Flexible online learning access</div>
-        <div class="point">✔ Supportive guidance for choosing the right course</div>
+      <h2>Guided Learning with Trainer Support</h2>
+      <div class="trainer-box">
+        <img src="YOUR_TRAINING_IMAGE" alt="Trainer-Led Online Sessions">
+        <div>
+          <h3>Interactive Live Sessions Designed for Better Learning</h3>
+          <p>
+            At Risevora Techlabs, learning is guided — not left to chance. Our trainer-led online sessions are designed to help learners understand concepts clearly, stay consistent, and gain confidence step by step. This creates a more engaging and effective learning experience for students, freshers, and beginners who need clarity, support, and structured progress.
+          </p>
+          <br>
+          <p>
+            Our goal is not just to “cover topics” — but to help learners truly understand what they are learning and move forward with stronger practical confidence.
+          </p>
+          <br>
+          <a href="YOUR_GOOGLE_FORM_LINK" target="_blank" class="btn primary">Talk to a Trainer</a>
+        </div>
       </div>
     </section>
 
     <!-- WHO CAN JOIN -->
     <section class="section">
-      <h2>Who Can Join Our Live Online Sessions?</h2>
-      <p class="section-intro">
-        Our programs are designed for learners from different backgrounds who want to build practical and future-ready skills.
-      </p>
-
-      <div class="grid">
-        <div class="card">
-          <h3>Students</h3>
-          <p>Students who want to improve technical and digital knowledge through guided live online training.</p>
-        </div>
-
-        <div class="card">
-          <h3>Freshers</h3>
-          <p>Fresh graduates who want to strengthen their skills and build more confidence for future opportunities.</p>
-        </div>
-
-        <div class="card">
-          <h3>Beginners</h3>
-          <p>Learners starting from the basics and looking for clear, structured, and beginner-friendly guidance.</p>
-        </div>
-
-        <div class="card">
-          <h3>Skill Builders</h3>
-          <p>Individuals who want to upgrade their knowledge in programming, embedded technology, or digital skills.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- LEARNING BENEFITS -->
-    <section class="section">
-      <h2>What You Gain from Our Live Online Training</h2>
+      <h2>Who Can Join Risevora Techlabs?</h2>
       <div class="points">
-        <div class="point">✔ Better concept clarity through live interaction</div>
-        <div class="point">✔ Stronger practical understanding of the subject</div>
-        <div class="point">✔ Improved confidence in learning technical topics</div>
-        <div class="point">✔ Structured skill development for future growth</div>
-        <div class="point">✔ Guidance-driven learning experience</div>
-        <div class="point">✔ More engaging and effective learning than passive content</div>
+        <div class="point">✔ Students who want stronger technical foundations</div>
+        <div class="point">✔ Freshers looking to build career-ready skills</div>
+        <div class="point">✔ Beginners starting from the basics</div>
+        <div class="point">✔ Learners who prefer live guided online sessions</div>
+        <div class="point">✔ Individuals upgrading technical or digital skills</div>
+        <div class="point">✔ Aspiring professionals preparing for future growth</div>
       </div>
     </section>
 
-    <!-- HOW IT WORKS -->
+    <!-- CTA BAND -->
     <section class="section">
-      <h2>How Learning Works at Risevora Techlabs</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Step 1: Choose Your Training Program</h3>
-          <p>Select the course that aligns with your interest, learning level, and career direction.</p>
-        </div>
-
-        <div class="card">
-          <h3>Step 2: Connect for Guidance</h3>
-          <p>Reach out to understand course details, live session structure, and training suitability.</p>
-        </div>
-
-        <div class="card">
-          <h3>Step 3: Join Live Online Sessions</h3>
-          <p>Attend structured, interactive online training designed for better understanding and engagement.</p>
-        </div>
-
-        <div class="card">
-          <h3>Step 4: Build Skills with Confidence</h3>
-          <p>Strengthen your learning through concept clarity, active sessions, and skill-building support.</p>
-        </div>
+      <div class="cta-band">
+        <h3>Ready to Start Learning?</h3>
+        <p>Take the next step with trainer-led live online sessions designed to help you learn with confidence and clarity.</p>
+        <a href="YOUR_GOOGLE_FORM_LINK" target="_blank" class="btn primary">Book Free Demo</a>
       </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="section">
-      <h2>Start Learning with Risevora Techlabs</h2>
-      <p class="section-intro">
-        If you are looking for live online training sessions that are practical, beginner-friendly, and focused on real skill development, Risevora Techlabs is here to help you move forward with confidence.
-      </p>
-      <p style="text-align:center;">
-        <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" class="btn secondary">Talk to Us on WhatsApp</a>
-        <a href="#enquiry" class="btn primary">Enquire Now</a>
-      </p>
     </section>
 
     <!-- FAQ -->
@@ -583,28 +610,28 @@
       <h2>Frequently Asked Questions</h2>
 
       <div class="faq-item">
-        <h3>Does Risevora Techlabs offer live online training sessions?</h3>
-        <p>Yes. Risevora Techlabs focuses on live online interactive training sessions designed for better learning and concept clarity.</p>
+        <h3>Are the classes live or recorded?</h3>
+        <p>Risevora Techlabs focuses on trainer-led live online sessions for better interaction, clarity, and guided learning.</p>
       </div>
 
       <div class="faq-item">
-        <h3>Which courses are available at Risevora Techlabs?</h3>
-        <p>We offer live online training in C Language, Python, Embedded Systems, and Digital Marketing.</p>
+        <h3>Who can join Risevora Techlabs training programs?</h3>
+        <p>Our courses are suitable for students, freshers, beginners, and anyone looking to build practical technical or digital skills.</p>
       </div>
 
       <div class="faq-item">
-        <h3>Are these courses suitable for beginners?</h3>
-        <p>Yes. Our programs are beginner-friendly and structured to support learners starting from the basics.</p>
+        <h3>Which courses are available?</h3>
+        <p>We currently offer trainer-led live online training in C Language, Python, Embedded Systems, and Digital Marketing.</p>
       </div>
 
       <div class="faq-item">
-        <h3>Who can join Risevora Techlabs?</h3>
-        <p>Students, freshers, beginners, and skill-seeking learners can join our live online training programs.</p>
+        <h3>How can I enquire about a course?</h3>
+        <p>You can fill out the Google Form or contact us directly on WhatsApp to get course details and trainer guidance.</p>
       </div>
 
       <div class="faq-item">
-        <h3>How can I get course details?</h3>
-        <p>You can fill out the enquiry form or contact us directly through WhatsApp to know more about our training programs.</p>
+        <h3>Is this suitable for beginners?</h3>
+        <p>Yes. Our training is designed to be beginner-friendly and supportive for learners starting from the basics.</p>
       </div>
     </section>
 
@@ -615,7 +642,7 @@
         <div>📞 YOUR_PHONE</div>
         <div>📧 YOUR_EMAIL</div>
         <div>📍 YOUR_LOCATION</div>
-        <div><a href="https://wa.me/YOUR_WHATSAPP_NUMBER">💬 Chat on WhatsApp</a></div>
+        <div><a href="https://wa.me/YOUR_WHATSAPP_NUMBER" target="_blank">💬 Chat on WhatsApp</a></div>
       </div>
     </section>
 
