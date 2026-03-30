@@ -1,1225 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Risevora Techlabs | Learn. Build. Rise.</title>
-  <meta name="description" content="Risevora Techlabs offers live online training in C Language, Python, Embedded Systems, and Digital Marketing with practical learning and career-focused guidance." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --bg:#0b1020;
-      --card:rgba(255,255,255,0.06);
-      --card-border:rgba(255,255,255,0.08);
-      --text:#ffffff;
-      --muted:#c9c9d4;
-      --accent:#00e5c3;
-      --accent2:#6d7dff;
-      --shadow:0 20px 60px rgba(0,0,0,0.28);
-      --radius:24px;
-      --max:1200px;
-    }
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:'Poppins',sans-serif;
-    }
-
-    html{scroll-behavior:smooth;}
-    body{
-      background:
-        radial-gradient(circle at top left, rgba(109,125,255,0.18), transparent 25%),
-        radial-gradient(circle at bottom right, rgba(0,229,195,0.14), transparent 28%),
-        var(--bg);
-      color:var(--text);
-      overflow-x:hidden;
-    }
-
-    a{text-decoration:none;color:inherit;}
-    img{max-width:100%;display:block;}
-    .container{
-      width:min(92%, var(--max));
-      margin:auto;
-      position:relative;
-      z-index:2;
-    }
-
-    .blob{
-      position:absolute;
-      border-radius:50%;
-      filter:blur(90px);
-      z-index:0;
-      opacity:.55;
-      animation:float 10s ease-in-out infinite;
-      pointer-events:none;
-    }
-    .blob.one{width:320px;height:320px;background:rgba(109,125,255,.28);top:20px;left:-80px;}
-    .blob.two{width:280px;height:280px;background:rgba(0,229,195,.18);right:-60px;top:240px;animation-delay:2s;}
-    .blob.three{width:260px;height:260px;background:rgba(255,120,180,.10);left:40%;bottom:140px;animation-delay:4s;}
-
-    @keyframes float{
-      0%,100%{transform:translateY(0) translateX(0);}
-      50%{transform:translateY(20px) translateX(15px);}
-    }
-
-    header{
-      position:sticky;
-      top:0;
-      z-index:1000;
-      background:rgba(11,16,32,.78);
-      backdrop-filter:blur(14px);
-      border-bottom:1px solid rgba(255,255,255,.08);
-    }
-
-    .nav{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:16px 0;
-      gap:20px;
-    }
-
-    .logo{
-      font-size:1.5rem;
-      font-weight:800;
-      letter-spacing:.2px;
-      white-space:nowrap;
-    }
-    .logo span{color:var(--accent);}
-
-    .nav-links{
-      display:flex;
-      align-items:center;
-      gap:22px;
-    }
-
-    .nav-links a{
-      color:#d8d8df;
-      font-size:.95rem;
-      transition:.25s;
-    }
-    .nav-links a:hover{color:var(--accent);}
-
-    .nav-cta{
-      background:linear-gradient(135deg,var(--accent),var(--accent2));
-      color:#fff;
-      padding:12px 18px;
-      border-radius:14px;
-      font-weight:600;
-      box-shadow:0 10px 28px rgba(109,125,255,.22);
-    }
-
-    .menu-toggle{
-      display:none;
-      font-size:1.8rem;
-      cursor:pointer;
-      user-select:none;
-    }
-
-    .mobile-menu{
-      display:none;
-      flex-direction:column;
-      gap:14px;
-      padding:16px 0 20px;
-    }
-
-    .mobile-menu a{
-      padding:12px 14px;
-      border-radius:14px;
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.08);
-      color:#f0f0f5;
-    }
-
-    .hero{
-      min-height:92vh;
-      display:grid;
-      grid-template-columns:1.1fr .9fr;
-      align-items:center;
-      gap:48px;
-      padding:70px 0 50px;
-      position:relative;
-    }
-
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:10px 18px;
-      background:rgba(255,255,255,.07);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:999px;
-      color:var(--accent);
-      font-size:.92rem;
-      margin-bottom:22px;
-    }
-
-    .hero h1{
-      font-size:clamp(2.2rem, 5vw, 3.5rem);
-      line-height:1.12;
-      font-weight:800;
-      margin-bottom:18px;
-      max-width:760px;
-    }
-
-    .hero h1 span{
-      background:linear-gradient(135deg,var(--accent),#7df8ff);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
-
-    .hero p{
-      color:var(--muted);
-      font-size:1.02rem;
-      line-height:1.9;
-      max-width:680px;
-      margin-bottom:28px;
-    }
-
-    .hero-btns{
-      display:flex;
-      flex-wrap:wrap;
-      gap:14px;
-      margin-bottom:24px;
-    }
-
-    .btn{
-      display:inline-block;
-      padding:15px 24px;
-      border-radius:16px;
-      font-weight:600;
-      transition:.3s ease;
-      text-align:center;
-    }
-
-    .btn-primary{
-      background:linear-gradient(135deg,var(--accent),var(--accent2));
-      color:#fff;
-      box-shadow:0 16px 34px rgba(109,125,255,.22);
-    }
-    .btn-primary:hover{transform:translateY(-4px);}
-
-    .btn-secondary{
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.04);
-      color:#fff;
-    }
-    .btn-secondary:hover{background:rgba(255,255,255,.08);}
-
-    .hero-mini{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-top:8px;
-    }
-
-    .mini-pill{
-      background:rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.08);
-      padding:12px 16px;
-      border-radius:16px;
-      color:#e8e8ee;
-      font-size:.92rem;
-    }
-
-    .hero-form{
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.08);
-      backdrop-filter:blur(18px);
-      border-radius:30px;
-      padding:28px;
-      box-shadow:var(--shadow);
-      position:relative;
-      overflow:hidden;
-      width:100%;
-    }
-
-    .hero-form h3{
-      font-size:1.35rem;
-      margin-bottom:10px;
-      color:var(--accent);
-    }
-
-    .hero-form p{
-      color:#d6d6df;
-      font-size:.95rem;
-      line-height:1.7;
-      margin-bottom:20px;
-    }
-
-    .form-group{margin-bottom:14px;}
-    .form-group input,.form-group select,.form-group textarea{
-      width:100%;
-      padding:14px 16px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.05);
-      color:#fff;
-      font-size:.95rem;
-      outline:none;
-    }
-
-    .form-group input::placeholder,.form-group textarea::placeholder{color:#bfc2d2;}
-    .form-group textarea{min-height:100px;resize:none;}
-
-    .form-submit{
-      width:100%;
-      border:none;
-      cursor:pointer;
-      padding:15px 20px;
-      border-radius:16px;
-      background:linear-gradient(135deg,var(--accent),var(--accent2));
-      color:#fff;
-      font-size:1rem;
-      font-weight:600;
-      box-shadow:0 14px 30px rgba(109,125,255,.22);
-    }
-
-    .hero-links{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
-      margin-top:16px;
-    }
-
-    .small-link{
-      text-align:center;
-      padding:12px 14px;
-      border-radius:14px;
-      background:rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.08);
-      font-size:.92rem;
-      color:#ececf3;
-    }
-
-    section{padding:88px 0;position:relative;}
-    .section-title{text-align:center;margin-bottom:50px;}
-    .section-title h2{
-      font-size:clamp(1.8rem, 4vw, 2.4rem);
-      margin-bottom:14px;
-    }
-    .section-title p{
-      color:var(--muted);
-      max-width:760px;
-      margin:auto;
-      line-height:1.9;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:24px;
-    }
-
-    .card{
-      background:var(--card);
-      border:1px solid var(--card-border);
-      border-radius:var(--radius);
-      padding:28px;
-      transition:.35s ease;
-      position:relative;
-      overflow:hidden;
-      box-shadow:0 8px 24px rgba(0,0,0,.10);
-    }
-
-    .card::after{
-      content:"";
-      position:absolute;
-      width:120px;height:120px;
-      background:radial-gradient(circle,rgba(0,229,195,.18),transparent 70%);
-      right:-20px;top:-20px;opacity:0;transition:.35s;
-    }
-
-    .card:hover{
-      transform:translateY(-10px);
-      box-shadow:0 20px 44px rgba(0,0,0,.28);
-      border-color:rgba(0,229,195,.30);
-    }
-    .card:hover::after{opacity:1;}
-
-    .card .icon{
-      width:54px;height:54px;border-radius:16px;display:grid;place-items:center;
-      margin-bottom:18px;font-size:1.4rem;
-      background:linear-gradient(135deg,var(--accent),var(--accent2));
-    }
-
-    .card h3{font-size:1.15rem;margin-bottom:12px;}
-    .card p{color:#d5d5de;line-height:1.8;font-size:.95rem;}
-
-    .tabs{max-width:980px;margin:auto;}
-    .tab-buttons{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      justify-content:center;
-      margin-bottom:28px;
-    }
-
-    .tab-btn{
-      padding:13px 18px;
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.05);
-      color:#fff;
-      cursor:pointer;
-      font-weight:600;
-      transition:.25s;
-    }
-
-    .tab-btn.active,.tab-btn:hover{
-      background:linear-gradient(135deg,var(--accent),var(--accent2));
-      border-color:transparent;
-    }
-
-    .tab-content{
-      display:none;
-      background:rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:28px;
-      padding:30px;
-      box-shadow:var(--shadow);
-    }
-
-    .tab-content.active{display:block;animation:fade .35s ease;}
-    @keyframes fade{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
-
-    .tab-content h3{font-size:1.5rem;margin-bottom:12px;color:var(--accent);}
-    .tab-content p{color:#d6d6de;line-height:1.9;margin-bottom:16px;}
-    .tab-list{display:grid;gap:10px;margin-top:10px;}
-    .tab-list div{
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.06);
-      padding:14px 16px;border-radius:16px;color:#ececf2;
-    }
-
-    .stats{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:22px;
-    }
-
-    .stat{
-      background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.04));
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:28px;
-      padding:34px 24px;
-      text-align:center;
-      box-shadow:var(--shadow);
-    }
-
-    .stat h3{font-size:2.2rem;color:var(--accent);margin-bottom:8px;}
-    .stat p{color:#d7d7e0;}
-
-    .timeline{
-      display:grid;gap:18px;max-width:900px;margin:auto;
-    }
-
-    .timeline-step{
-      display:flex;gap:18px;align-items:flex-start;
-      background:rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:24px;padding:24px;
-    }
-
-    .step-no{
-      min-width:54px;height:54px;border-radius:16px;display:grid;place-items:center;
-      background:linear-gradient(135deg,var(--accent),var(--accent2));
-      font-weight:700;font-size:1.1rem;
-      flex-shrink:0;
-    }
-
-    .timeline-step h3{margin-bottom:8px;}
-    .timeline-step p{color:#d6d6de;line-height:1.8;}
-
-    .testimonial-wrap{max-width:860px;margin:auto;position:relative;}
-    .testimonial{
-      display:none;
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:30px;padding:38px;text-align:center;box-shadow:var(--shadow);
-    }
-    .testimonial.active{display:block;animation:fade .5s ease;}
-    .testimonial p{
-      font-size:1.05rem;line-height:2;color:#ececf2;margin-bottom:18px;
-    }
-    .testimonial h4{color:var(--accent);font-size:1rem;font-weight:600;}
-
-    .dots{
-      display:flex;justify-content:center;gap:10px;margin-top:22px;
-    }
-
-    .dot{
-      width:12px;height:12px;border-radius:50%;
-      background:rgba(255,255,255,.22);cursor:pointer;transition:.25s;
-    }
-    .dot.active{background:var(--accent);transform:scale(1.15);}
-
-    .faq{
-      max-width:900px;margin:auto;display:grid;gap:16px;
-    }
-
-    .faq-item{
-      background:rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:22px;overflow:hidden;
-    }
-
-    .faq-question{
-      padding:22px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;
-      font-weight:600;font-size:1rem;
-      gap:12px;
-    }
-
-    .faq-question span{
-      font-size:1.3rem;color:var(--accent);transition:.25s;flex-shrink:0;
-    }
-
-    .faq-answer{
-      max-height:0;overflow:hidden;
-      transition:max-height .35s ease,padding .35s ease;
-      padding:0 24px;color:#d7d7df;line-height:1.85;
-    }
-
-    .faq-item.active .faq-answer{
-      max-height:220px;padding:0 24px 22px;
-    }
-    .faq-item.active .faq-question span{transform:rotate(45deg);}
-
-    .cta-box{
-      background:linear-gradient(135deg,rgba(109,125,255,.22),rgba(0,229,195,.14));
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:34px;padding:56px 30px;text-align:center;box-shadow:var(--shadow);
-    }
-
-    .cta-box h2{font-size:clamp(1.8rem, 4vw, 2.4rem);margin-bottom:16px;}
-    .cta-box p{
-      color:#d7d7df;max-width:760px;margin:0 auto 28px;line-height:1.9;
-    }
-
-    .contact-grid{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:24px;
-    }
-
-    .contact-card{
-      background:rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:24px;padding:28px;transition:.3s;
-    }
-    .contact-card:hover{
-      transform:translateY(-8px);border-color:rgba(0,229,195,.28);
-    }
-    .contact-card h3{margin-bottom:12px;color:var(--accent);}
-    .contact-card p{color:#d8d8df;line-height:1.8;}
-
-    .footer{
-      padding:40px 0 90px;
-      text-align:center;
-      color:#a8a8b5;
-      font-size:.95rem;
-    }
-
-    .whatsapp-float{
-      position:fixed;right:18px;bottom:90px;z-index:9999;
-      width:58px;height:58px;border-radius:50%;
-      background:linear-gradient(135deg,#25d366,#14b956);
-      display:grid;place-items:center;font-size:1.6rem;
-      box-shadow:0 18px 40px rgba(37,211,102,.32);
-      animation:pulse 2s infinite;
-    }
-
-    @keyframes pulse{
-      0%{box-shadow:0 0 0 0 rgba(37,211,102,.35);}
-      70%{box-shadow:0 0 0 18px rgba(37,211,102,0);}
-      100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
-    }
-
-    .sticky-bottom-cta{
-      position:fixed;
-      left:50%;
-      transform:translateX(-50%);
-      bottom:16px;
-      z-index:9998;
-      background:rgba(11,16,32,.88);
-      border:1px solid rgba(255,255,255,.10);
-      backdrop-filter:blur(14px);
-      border-radius:20px;
-      padding:10px;
-      display:flex;
-      gap:10px;
-      box-shadow:0 20px 40px rgba(0,0,0,.28);
-      width:min(92%,560px);
-      justify-content:center;
-    }
-
-    .sticky-bottom-cta a{
-      flex:1;
-      text-align:center;
-      padding:13px 16px;
-      border-radius:14px;
-      font-weight:600;
-      font-size:.95rem;
-    }
-
-    .sticky-bottom-cta .primary{
-      background:linear-gradient(135deg,var(--accent),var(--accent2));
-      color:#fff;
-    }
-
-    .sticky-bottom-cta .secondary{
-      background:rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.08);
-      color:#fff;
-    }
-
-    .fade-up{
-      opacity:0;transform:translateY(35px);transition:all .8s ease;
-    }
-    .fade-up.visible{
-      opacity:1;transform:translateY(0);
-    }
-
-    /* ===== TABLET ===== */
-    @media (max-width: 1024px){
-      .hero{
-        grid-template-columns:1fr;
-        gap:32px;
-        min-height:auto;
-        padding-top:50px;
-      }
-
-      .hero-left,.hero-right{
-        width:100%;
-      }
-
-      .hero-mini,.hero-btns{
-        justify-content:center;
-      }
-
-      .hero-left{
-        text-align:center;
-      }
-
-      .hero-form{
-        max-width:640px;
-        margin:auto;
-      }
-
-      .grid{
-        grid-template-columns:repeat(2,1fr);
-      }
-
-      .stats{
-        grid-template-columns:repeat(2,1fr);
-      }
-
-      .contact-grid{
-        grid-template-columns:repeat(2,1fr);
-      }
-    }
-
-    /* ===== MOBILE ===== */
-    @media (max-width: 768px){
-      .nav-links{display:none;}
-      .menu-toggle{display:block;}
-
-      .mobile-menu.show{display:flex;}
-
-      .nav{
-        padding:14px 0;
-      }
-
-      .logo{
-        font-size:1.25rem;
-      }
-
-      .hero{
-        padding:36px 0 30px;
-      }
-
-      .hero p{
-        font-size:.96rem;
-      }
-
-      .hero-btns{
-        flex-direction:column;
-      }
-
-      .hero-btns .btn{
-        width:100%;
-      }
-
-      .hero-mini{
-        flex-direction:column;
-      }
-
-      .mini-pill{
-        width:100%;
-      }
-
-      .hero-form{
-        padding:22px 18px;
-        border-radius:24px;
-      }
-
-      .hero-links{
-        grid-template-columns:1fr;
-      }
-
-      .grid{
-        grid-template-columns:1fr;
-      }
-
-      .tab-buttons{
-        overflow-x:auto;
-        flex-wrap:nowrap;
-        justify-content:flex-start;
-        padding-bottom:6px;
-        scrollbar-width:none;
-      }
-      .tab-buttons::-webkit-scrollbar{display:none;}
-
-      .tab-btn{
-        white-space:nowrap;
-        flex-shrink:0;
-      }
-
-      .tab-content{
-        padding:22px 18px;
-        border-radius:22px;
-      }
-
-      .stats{
-        grid-template-columns:1fr;
-      }
-
-      .timeline-step{
-        flex-direction:column;
-        padding:20px;
-      }
-
-      .testimonial{
-        padding:26px 18px;
-      }
-
-      .faq-question{
-        font-size:.95rem;
-        padding:18px 18px;
-      }
-
-      .faq-answer{
-        padding:0 18px;
-      }
-
-      .faq-item.active .faq-answer{
-        padding:0 18px 18px;
-      }
-
-      .cta-box{
-        padding:34px 20px;
-        border-radius:26px;
-      }
-
-      .contact-grid{
-        grid-template-columns:1fr;
-      }
-
-      .contact-card{
-        padding:22px;
-      }
-
-      .sticky-bottom-cta{
-        width:94%;
-        bottom:12px;
-        padding:8px;
-      }
-
-      .sticky-bottom-cta a{
-        font-size:.88rem;
-        padding:12px 10px;
-      }
-
-      .whatsapp-float{
-        width:52px;
-        height:52px;
-        font-size:1.4rem;
-        right:14px;
-        bottom:84px;
-      }
-
-      .footer{
-        padding-bottom:100px;
-      }
-    }
-
-    /* ===== SMALL PHONES ===== */
-    @media (max-width: 480px){
-      .hero h1{
-        font-size:1.95rem;
-      }
-
-      .section-title{
-        margin-bottom:38px;
-      }
-
-      .section-title p{
-        font-size:.95rem;
-      }
-
-      .btn{
-        font-size:.95rem;
-        padding:14px 16px;
-      }
-
-      .card{
-        padding:22px;
-      }
-
-      .stat{
-        padding:28px 18px;
-      }
-
-      .stat h3{
-        font-size:1.9rem;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Risevora Techlabs</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:#0b1020;
+  color:#fff;
+}
+
+.container{
+  width:92%;
+  max-width:1100px;
+  margin:auto;
+}
+
+/* HERO */
+.hero{
+  padding:40px 0 30px;
+  text-align:center;
+}
+
+.logo{
+  font-size:1.4rem;
+  font-weight:700;
+}
+.logo span{color:#00e5c3;}
+
+.hero h1{
+  font-size:clamp(1.8rem,5vw,2.5rem);
+  margin:15px 0;
+}
+
+.hero p{
+  color:#c9c9d4;
+  line-height:1.7;
+  font-size:.95rem;
+}
+
+.btn{
+  display:block;
+  width:100%;
+  padding:14px;
+  border-radius:12px;
+  margin-top:12px;
+  text-align:center;
+  font-weight:600;
+}
+
+.primary{
+  background:linear-gradient(135deg,#00e5c3,#6d7dff);
+}
+
+.secondary{
+  background:#1a2038;
+}
+
+/* COURSES */
+.section{
+  padding:40px 0;
+}
+
+.section h2{
+  text-align:center;
+  margin-bottom:25px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:15px;
+}
+
+.card{
+  background:#141a33;
+  padding:18px;
+  border-radius:16px;
+}
+
+.card h3{
+  margin-bottom:8px;
+}
+
+/* FORM */
+.form{
+  background:#141a33;
+  padding:20px;
+  border-radius:18px;
+}
+
+.form input,.form select{
+  width:100%;
+  padding:12px;
+  margin-bottom:10px;
+  border-radius:10px;
+  border:none;
+  background:#0b1020;
+  color:#fff;
+}
+
+/* CONTACT */
+.contact{
+  display:grid;
+  gap:12px;
+}
+
+.contact div{
+  background:#141a33;
+  padding:14px;
+  border-radius:12px;
+  text-align:center;
+}
+
+/* FOOTER */
+.footer{
+  text-align:center;
+  font-size:.8rem;
+  color:#aaa;
+  padding:20px 0;
+}
+
+/* TABLET */
+@media(min-width:768px){
+  .grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .btn{
+    width:auto;
+    display:inline-block;
+    margin-right:10px;
+  }
+}
+
+/* DESKTOP */
+@media(min-width:1024px){
+  .hero{
+    text-align:left;
+  }
+
+  .hero-flex{
+    display:flex;
+    gap:40px;
+    align-items:center;
+  }
+
+  .hero-left,.hero-right{
+    flex:1;
+  }
+}
+</style>
 </head>
+
 <body>
 
-  <div class="blob one"></div>
-  <div class="blob two"></div>
-  <div class="blob three"></div>
+<div class="container">
 
-  <header>
-    <div class="container">
-      <div class="nav">
-        <div class="logo">Risevora <span>Techlabs</span></div>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="logo">Risevora <span>Techlabs</span></div>
 
-        <div class="nav-links">
-          <a href="#courses">Courses</a>
-          <a href="#programs">Programs</a>
-          <a href="#journey">Journey</a>
-          <a href="#faq">FAQ</a>
-          <a href="#contact" class="nav-cta">Enquire Now</a>
+    <div class="hero-flex">
+      <div class="hero-left">
+        <h1>Learn In-Demand Tech Skills. Build Real Careers.</h1>
+        <p>Learn C Language, Python, Embedded Systems, and Digital Marketing with practical training and career guidance.</p>
+
+        <a href="https://wa.me/9121990099" class="btn secondary">💬 WhatsApp Us</a>
+        <a href="#form" class="btn primary">Get Course Details</a>
+      </div>
+
+      <div class="hero-right">
+        <div class="form" id="form">
+          <h3>Get Free Guidance</h3>
+
+          <form action="https://forms.gle/BKCxaCLbTh4VPpmJ9" target="_blank">
+            <input type="text" placeholder="Your Name" required>
+            <input type="tel" placeholder="Phone Number" required>
+
+            <select required>
+              <option>Select Course</option>
+              <option>C Language</option>
+              <option>Python</option>
+              <option>Embedded Systems</option>
+              <option>Digital Marketing</option>
+            </select>
+
+            <button class="btn primary">Submit</button>
+          </form>
         </div>
-
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-      </div>
-
-      <div class="mobile-menu" id="mobileMenu">
-        <a href="#courses" onclick="closeMenu()">Courses</a>
-        <a href="#programs" onclick="closeMenu()">Programs</a>
-        <a href="#journey" onclick="closeMenu()">Journey</a>
-        <a href="#faq" onclick="closeMenu()">FAQ</a>
-        <a href="#contact" onclick="closeMenu()">Enquire Now</a>
-      </div>
-    </div>
-  </header>
-
-  <section class="hero container">
-    <div class="hero-left fade-up">
-      <div class="badge">🚀 Learn. Build. Rise.</div>
-      <h1>Learn <span>In-Demand Tech Skills</span>. Build Real Careers.</h1>
-      <p>
-        Risevora Techlabs helps students, freshers, and professionals gain practical skills in C Language, Python, Embedded Systems, and Digital Marketing through live online training, projects, and career-focused guidance.
-      </p>
-
-      <div class="hero-btns">
-        <a href="#contact" class="btn btn-primary">Get Course Details</a>
-        <a href="#programs" class="btn btn-secondary">Explore Programs</a>
-      </div>
-
-      <div class="hero-mini">
-        <div class="mini-pill">💻 Live Online Classes</div>
-        <div class="mini-pill">🛠 Practical Learning</div>
-        <div class="mini-pill">🎯 Career Guidance</div>
       </div>
     </div>
+  </div>
 
-    <div class="hero-right hero-form fade-up">
-      <h3>Get Free Course Guidance</h3>
-      <p>Fill out your details to receive course info, fee structure, batch timings, and demo class details.</p>
-
-      <form action="YOUR_GOOGLE_FORM_LINK" method="GET" target="_blank">
-        <div class="form-group">
-          <input type="text" placeholder="Your Name" required>
-        </div>
-        <div class="form-group">
-          <input type="tel" placeholder="Phone Number" required>
-        </div>
-        <div class="form-group">
-          <select required>
-            <option value="">Select Course</option>
-            <option>C Language</option>
-            <option>Python</option>
-            <option>Embedded Systems</option>
-            <option>Digital Marketing</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <textarea placeholder="Tell us what you'd like to learn"></textarea>
-        </div>
-        <button class="form-submit" type="submit">Get Course Details</button>
-      </form>
-
-      <div class="hero-links">
-        <a class="small-link" href="https://wa.me/YOUR_WHATSAPP_NUMBER" target="_blank">💬 WhatsApp Us</a>
-        <a class="small-link" href="#contact">📞 Request Callback</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="courses" class="container fade-up">
-    <div class="section-title">
-      <h2>Popular Career-Focused Courses</h2>
-      <p>Choose from practical, industry-relevant programs designed to help you build strong technical and career-ready skills.</p>
-    </div>
+  <!-- COURSES -->
+  <div class="section">
+    <h2>Our Courses</h2>
 
     <div class="grid">
       <div class="card">
-        <div class="icon">💻</div>
         <h3>C Language</h3>
-        <p>Build a strong programming foundation by learning C Language, problem-solving, logic building, and core coding concepts.</p>
+        <p>Strong programming foundation and logic building.</p>
       </div>
 
       <div class="card">
-        <div class="icon">🐍</div>
         <h3>Python</h3>
-        <p>Master Python from fundamentals to practical implementation with coding exercises, real examples, and mini projects.</p>
+        <p>Learn coding with real-world examples and projects.</p>
       </div>
 
       <div class="card">
-        <div class="icon">🔌</div>
         <h3>Embedded Systems</h3>
-        <p>Learn Embedded Systems and build smart, real-world hardware and IoT solutions with practical understanding.</p>
+        <p>Build smart hardware and IoT solutions.</p>
       </div>
 
       <div class="card">
-        <div class="icon">📈</div>
         <h3>Digital Marketing</h3>
-        <p>Learn Digital Marketing and build the skills to grow brands, businesses, and online presence effectively.</p>
+        <p>Grow brands and businesses online.</p>
       </div>
     </div>
-  </section>
+  </div>
 
-  <section id="programs" class="container fade-up">
-    <div class="section-title">
-      <h2>Explore Our Programs</h2>
-      <p>Choose the path that fits your interest, skill level, and career goals.</p>
+  <!-- CONTACT -->
+  <div class="section">
+    <h2>Contact Us</h2>
+
+    <div class="contact">
+      <div>📞 9121990099</div>
+      <div>📧 risevoratechlabs@gmail.com</div>
+      <div><a href="https://wa.me/9121990099">💬 WhatsApp Chat</a></div>
     </div>
-
-    <div class="tabs">
-      <div class="tab-buttons">
-        <button class="tab-btn active" onclick="openTab(event, 'clang')">C Language</button>
-        <button class="tab-btn" onclick="openTab(event, 'python')">Python</button>
-        <button class="tab-btn" onclick="openTab(event, 'embedded')">Embedded Systems</button>
-        <button class="tab-btn" onclick="openTab(event, 'marketing')">Digital Marketing</button>
-      </div>
-
-      <div id="clang" class="tab-content active">
-        <h3>C Language Course</h3>
-        <p>Ideal for beginners who want to build a strong programming foundation and improve logic-building skills.</p>
-        <div class="tab-list">
-          <div>✔ Basics to advanced C concepts</div>
-          <div>✔ Problem solving and coding practice</div>
-          <div>✔ Strong foundation for technical careers</div>
-        </div>
-      </div>
-
-      <div id="python" class="tab-content">
-        <h3>Python Course</h3>
-        <p>Perfect for students and beginners who want to learn coding, automation basics, and practical programming skills.</p>
-        <div class="tab-list">
-          <div>✔ Python fundamentals to advanced topics</div>
-          <div>✔ Coding exercises and mini projects</div>
-          <div>✔ Beginner-friendly structured learning</div>
-        </div>
-      </div>
-
-      <div id="embedded" class="tab-content">
-        <h3>Embedded Systems Course</h3>
-        <p>Designed for learners interested in hardware, electronics, IoT, and real-time system development.</p>
-        <div class="tab-list">
-          <div>✔ Embedded systems basics and applications</div>
-          <div>✔ Hardware and system understanding</div>
-          <div>✔ Real-world practical learning</div>
-        </div>
-      </div>
-
-      <div id="marketing" class="tab-content">
-        <h3>Digital Marketing Course</h3>
-        <p>Great for learners who want to build practical marketing skills for brands, businesses, and online growth.</p>
-        <div class="tab-list">
-          <div>✔ Social media and digital strategy basics</div>
-          <div>✔ Brand growth and online visibility concepts</div>
-          <div>✔ Practical marketing skill development</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="container fade-up">
-    <div class="section-title">
-      <h2>Build Skills That Matter</h2>
-      <p>Risevora Techlabs helps learners build confidence through structured, practical, and career-focused training.</p>
-    </div>
-
-    <div class="stats">
-      <div class="stat">
-        <h3 class="counter" data-target="100">0</h3>
-        <p>Practical Learning Focus</p>
-      </div>
-      <div class="stat">
-        <h3 class="counter" data-target="50">0</h3>
-        <p>Assignments & Practice Tasks</p>
-      </div>
-      <div class="stat">
-        <h3 class="counter" data-target="4">0</h3>
-        <p>Career-Focused Programs</p>
-      </div>
-      <div class="stat">
-        <h3 class="counter" data-target="24">0</h3>
-        <p>Guidance & Support</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="journey" class="container fade-up">
-    <div class="section-title">
-      <h2>Your Learning Journey</h2>
-      <p>A simple and structured path designed to help you move from interest to skill development and career readiness.</p>
-    </div>
-
-    <div class="timeline">
-      <div class="timeline-step">
-        <div class="step-no">1</div>
-        <div>
-          <h3>Choose the Right Course</h3>
-          <p>Select the program that matches your interest, background, and career goal with guidance from our team.</p>
-        </div>
-      </div>
-
-      <div class="timeline-step">
-        <div class="step-no">2</div>
-        <div>
-          <h3>Join Live Online Classes</h3>
-          <p>Attend interactive sessions that help you understand concepts clearly and learn step by step.</p>
-        </div>
-      </div>
-
-      <div class="timeline-step">
-        <div class="step-no">3</div>
-        <div>
-          <h3>Practice & Apply Skills</h3>
-          <p>Strengthen your learning through practical tasks, assignments, and implementation-based activities.</p>
-        </div>
-      </div>
-
-      <div class="timeline-step">
-        <div class="step-no">4</div>
-        <div>
-          <h3>Grow with Confidence</h3>
-          <p>Build the confidence and practical knowledge needed to move toward real career opportunities.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="container fade-up">
-    <div class="section-title">
-      <h2>What Learners Say</h2>
-      <p>Here’s how students and learners describe their experience with Risevora Techlabs.</p>
-    </div>
-
-    <div class="testimonial-wrap">
-      <div class="testimonial active">
-        <p>“The classes were clear, practical, and very helpful for understanding concepts step by step.”</p>
-        <h4>— Student Feedback</h4>
-      </div>
-
-      <div class="testimonial">
-        <p>“Risevora Techlabs made learning easier and helped me gain confidence in technical skills.”</p>
-        <h4>— Learner Review</h4>
-      </div>
-
-      <div class="testimonial">
-        <p>“A very useful platform for beginners who want practical and career-oriented learning.”</p>
-        <h4>— Trainee Testimonial</h4>
-      </div>
-
-      <div class="dots">
-        <div class="dot active" onclick="showTestimonial(0)"></div>
-        <div class="dot" onclick="showTestimonial(1)"></div>
-        <div class="dot" onclick="showTestimonial(2)"></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="faq" class="container fade-up">
-    <div class="section-title">
-      <h2>Frequently Asked Questions</h2>
-      <p>Everything you may want to know before joining Risevora Techlabs.</p>
-    </div>
-
-    <div class="faq">
-      <div class="faq-item">
-        <div class="faq-question">Who can join Risevora Techlabs? <span>+</span></div>
-        <div class="faq-answer">Our courses are ideal for students, freshers, beginners, job seekers, and anyone looking to build practical career-ready skills.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question">Do I need prior knowledge? <span>+</span></div>
-        <div class="faq-answer">No. Our courses are beginner-friendly and designed to help learners start from the basics and grow step by step.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question">Are the classes live or recorded? <span>+</span></div>
-        <div class="faq-answer">Risevora Techlabs focuses on live online interactive classes to make learning more engaging and practical.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question">Do you provide guidance for choosing the right course? <span>+</span></div>
-        <div class="faq-answer">Yes. We help learners choose the right course based on their goals, interests, and future career plans.</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="container fade-up">
-    <div class="cta-box">
-      <h2>Ready to Start Your Learning Journey?</h2>
-      <p>
-        Join Risevora Techlabs and build practical skills, confidence, and real knowledge to grow toward your future goals.
-      </p>
-      <a href="#contact" class="btn btn-primary">Book Free Demo</a>
-    </div>
-  </section>
-
-  <section id="contact" class="container fade-up">
-    <div class="section-title">
-      <h2>Get Course Details</h2>
-      <p>Connect with us to know about course details, fee structure, batch timings, and free demo class information.</p>
-    </div>
-
-    <div class="contact-grid">
-      <div class="contact-card">
-        <h3>📞 Call Us</h3>
-        <p>YOUR_PHONE</p>
-      </div>
-
-      <div class="contact-card">
-        <h3>📧 Email</h3>
-        <p>YOUR_EMAIL</p>
-      </div>
-
-      <div class="contact-card">
-        <h3>💬 WhatsApp</h3>
-        <p><a href="https://wa.me/YOUR_WHATSAPP_NUMBER" target="_blank">Chat with us instantly</a></p>
-      </div>
-
-      <div class="contact-card">
-        <h3>📝 Enquiry Form</h3>
-        <p><a href="YOUR_GOOGLE_FORM_LINK" target="_blank">Fill out your details here</a></p>
-      </div>
-    </div>
-  </section>
+  </div>
 
   <div class="footer">
-    © 2026 Risevora Techlabs. Learn. Build. Rise.
+    © 2026 Risevora Techlabs
   </div>
 
-  <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">💬</a>
-
-  <div class="sticky-bottom-cta">
-    <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" target="_blank" class="secondary">WhatsApp Us</a>
-    <a href="#contact" class="primary">Get Course Details</a>
-  </div>
-
-  <script>
-    function toggleMenu(){
-      document.getElementById('mobileMenu').classList.toggle('show');
-    }
-
-    function closeMenu(){
-      document.getElementById('mobileMenu').classList.remove('show');
-    }
-
-    const faders = document.querySelectorAll('.fade-up');
-    const observer = new IntersectionObserver((entries)=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){
-          entry.target.classList.add('visible');
-        }
-      });
-    },{threshold:0.15});
-    faders.forEach(el=>observer.observe(el));
-
-    const counters = document.querySelectorAll('.counter');
-    let counterStarted = false;
-
-    function runCounters(){
-      counters.forEach(counter=>{
-        const target = +counter.getAttribute('data-target');
-        const update = ()=>{
-          const current = parseInt(counter.innerText) || 0;
-          const increment = Math.max(1, Math.ceil(target / 70));
-          if(current < target){
-            counter.innerText = Math.min(current + increment, target);
-            setTimeout(update, 28);
-          } else {
-            counter.innerText = target + '+';
-          }
-        };
-        update();
-      });
-    }
-
-    const statsSection = document.querySelector('.stats');
-    const statsObserver = new IntersectionObserver((entries)=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting && !counterStarted){
-          runCounters();
-          counterStarted = true;
-        }
-      });
-    },{threshold:0.3});
-    if(statsSection) statsObserver.observe(statsSection);
-
-    function openTab(evt, tabId){
-      document.querySelectorAll('.tab-content').forEach(tab=>tab.classList.remove('active'));
-      document.querySelectorAll('.tab-btn').forEach(btn=>btn.classList.remove('active'));
-      document.getElementById(tabId).classList.add('active');
-      evt.currentTarget.classList.add('active');
-    }
-
-    const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach(item=>{
-      item.querySelector('.faq-question').addEventListener('click', ()=>{
-        item.classList.toggle('active');
-      });
-    });
-
-    const testimonials = document.querySelectorAll('.testimonial');
-    const dots = document.querySelectorAll('.dot');
-    let currentTestimonial = 0;
-
-    function showTestimonial(index){
-      testimonials.forEach((t,i)=>t.classList.toggle('active', i===index));
-      dots.forEach((d,i)=>d.classList.toggle('active', i===index));
-      currentTestimonial = index;
-    }
-
-    setInterval(()=>{
-      currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-      showTestimonial(currentTestimonial);
-    }, 4500);
-  </script>
+</div>
 
 </body>
 </html>
