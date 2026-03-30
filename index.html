@@ -1,185 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Risevora Techlabs | Learn. Build. Rise.</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <title>Risevora Techlabs | Online Training Institute for C, Python, Embedded Systems & Digital Marketing</title>
 
-<style>
-body{
-  margin:0;
-  font-family:'Poppins',sans-serif;
-  background:#0b1020;
-  color:#fff;
-  overflow-x:hidden;
-}
+  <meta name="description" content="Risevora Techlabs is an online training institute offering practical training in C Language, Python, Embedded Systems, and Digital Marketing. Learn in-demand tech skills with career-focused online courses." />
 
-.container{
-  width:92%;
-  max-width:1100px;
-  margin:auto;
-}
+  <meta name="keywords" content="C Language course, Python training, Embedded Systems course, Digital Marketing course, online training institute, programming classes, online tech courses, Risevora Techlabs" />
 
-/* HERO */
-.hero{
-  padding:40px 0;
-}
+  <meta name="author" content="Risevora Techlabs" />
 
-.logo{
-  font-size:1.5rem;
-  font-weight:700;
-  text-align:center;
-}
-.logo span{color:#00e5c3;}
+  <meta property="og:title" content="Risevora Techlabs | Learn In-Demand Tech Skills" />
+  <meta property="og:description" content="Learn C Language, Python, Embedded Systems, and Digital Marketing with practical training and career guidance at Risevora Techlabs." />
+  <meta property="og:type" content="website" />
 
-.hero-flex{
-  display:flex;
-  flex-direction:column;
-  gap:30px;
-  align-items:center;
-  margin-top:20px;
-}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-.hero-left{
-  text-align:center;
-}
+  <style>
+    body{
+      margin:0;
+      font-family:'Poppins',sans-serif;
+      background:#0b1020;
+      color:#fff;
+      overflow-x:hidden;
+      line-height:1.75;
+    }
 
-.hero h1{
-  font-size:clamp(1.8rem,5vw,2.8rem);
-  margin:15px 0;
-}
+    .container{
+      width:92%;
+      max-width:1180px;
+      margin:auto;
+    }
 
-.hero p{
-  color:#c9c9d4;
-  line-height:1.7;
-}
+    a{text-decoration:none;color:inherit;}
 
-.btn{
-  display:block;
-  width:100%;
-  padding:14px;
-  border-radius:12px;
-  margin-top:12px;
-  text-align:center;
-  font-weight:600;
-  text-decoration:none;
-}
+    .hero{
+      padding:50px 0 40px;
+    }
 
-.primary{
-  background:linear-gradient(135deg,#00e5c3,#6d7dff);
-}
+    .logo{
+      font-size:1.7rem;
+      font-weight:800;
+      text-align:center;
+      margin-bottom:20px;
+    }
+    .logo span{color:#00e5c3;}
 
-.secondary{
-  background:#1a2038;
-}
+    .hero-flex{
+      display:flex;
+      flex-direction:column;
+      gap:30px;
+      align-items:center;
+    }
 
-/* FORM */
-.form{
-  background:#141a33;
-  padding:20px;
-  border-radius:18px;
-  width:100%;
-}
+    .hero-left{
+      text-align:center;
+    }
 
-.form input,.form select{
-  width:100%;
-  padding:12px;
-  margin-bottom:10px;
-  border-radius:10px;
-  border:none;
-  background:#0b1020;
-  color:#fff;
-}
+    .badge{
+      display:inline-block;
+      background:#151c38;
+      color:#00e5c3;
+      padding:8px 16px;
+      border-radius:30px;
+      font-size:.9rem;
+      margin-bottom:18px;
+    }
 
-/* SECTION */
-.section{
-  padding:40px 0;
-}
+    .hero h1{
+      font-size:clamp(2rem,5vw,3.2rem);
+      line-height:1.2;
+      margin:10px 0 15px;
+    }
 
-.section h2{
-  text-align:center;
-  margin-bottom:20px;
-}
+    .hero p{
+      color:#c9c9d4;
+      font-size:1rem;
+      max-width:760px;
+    }
 
-/* COURSES */
-.grid{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:15px;
-}
+    .hero-buttons{
+      margin-top:20px;
+    }
 
-.card{
-  background:#141a33;
-  padding:18px;
-  border-radius:16px;
-  text-align:center;
-}
+    .btn{
+      display:block;
+      width:100%;
+      padding:14px 16px;
+      border-radius:12px;
+      margin-top:12px;
+      text-align:center;
+      font-weight:600;
+      font-size:.95rem;
+    }
 
-/* CONTACT */
-.contact{
-  display:grid;
-  gap:12px;
-}
+    .primary{
+      background:linear-gradient(135deg,#00e5c3,#6d7dff);
+    }
 
-.contact div{
-  background:#141a33;
-  padding:14px;
-  border-radius:12px;
-  text-align:center;
-}
+    .secondary{
+      background:#151c38;
+    }
 
-/* FOOTER */
-.footer{
-  text-align:center;
-  font-size:.85rem;
-  color:#aaa;
-  padding:20px 0;
-}
+    .form{
+      background:#141a33;
+      padding:22px;
+      border-radius:18px;
+      width:100%;
+      box-sizing:border-box;
+    }
 
-/* TABLET */
-@media(min-width:768px){
+    .form h3{
+      margin-top:0;
+      margin-bottom:15px;
+      color:#00e5c3;
+    }
 
-  .hero-flex{
-    flex-direction:row;
-    align-items:center;
-  }
+    .form input,.form select{
+      width:100%;
+      padding:12px;
+      margin-bottom:12px;
+      border-radius:10px;
+      border:none;
+      background:#0b1020;
+      color:#fff;
+      box-sizing:border-box;
+    }
 
-  .hero-left{
-    text-align:left;
-    flex:1;
-  }
+    .form button{
+      border:none;
+      cursor:pointer;
+    }
 
-  .form{
-    flex:1;
-  }
+    .section{
+      padding:48px 0;
+    }
 
-  .grid{
-    grid-template-columns:1fr 1fr;
-  }
+    .section h2{
+      text-align:center;
+      font-size:2rem;
+      margin-bottom:16px;
+    }
 
-  .btn{
-    width:auto;
-    display:inline-block;
-    margin-right:10px;
-  }
-}
+    .section-intro{
+      text-align:center;
+      color:#c9c9d4;
+      max-width:900px;
+      margin:0 auto 32px;
+    }
 
-/* DESKTOP */
-@media(min-width:1024px){
+    .grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:18px;
+    }
 
-  .hero h1{
-    font-size:3rem;
-  }
+    .card{
+      background:#141a33;
+      padding:22px;
+      border-radius:18px;
+    }
 
-  .grid{
-    grid-template-columns:1fr 1fr 1fr 1fr;
-  }
-}
-</style>
+    .card h3{
+      margin-top:0;
+      color:#00e5c3;
+    }
+
+    .card p{
+      color:#d8d8df;
+      font-size:.96rem;
+    }
+
+    .points{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+    }
+
+    .point{
+      background:#141a33;
+      padding:18px;
+      border-radius:16px;
+    }
+
+    .faq-item{
+      background:#141a33;
+      padding:18px;
+      border-radius:16px;
+      margin-bottom:14px;
+    }
+
+    .faq-item h3{
+      margin-top:0;
+      color:#00e5c3;
+      font-size:1.05rem;
+    }
+
+    .faq-item p{
+      color:#d8d8df;
+      margin-bottom:0;
+    }
+
+    .contact{
+      display:grid;
+      gap:14px;
+    }
+
+    .contact div{
+      background:#141a33;
+      padding:16px;
+      border-radius:14px;
+      text-align:center;
+    }
+
+    .footer{
+      text-align:center;
+      font-size:.85rem;
+      color:#aaa;
+      padding:24px 0 30px;
+    }
+
+    @media(min-width:768px){
+      .hero-flex{
+        flex-direction:row;
+        align-items:center;
+      }
+
+      .hero-left{
+        flex:1;
+        text-align:left;
+      }
+
+      .form{
+        flex:1;
+      }
+
+      .grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .points{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .btn{
+        width:auto;
+        display:inline-block;
+        margin-right:10px;
+      }
+
+      .contact{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media(min-width:1024px){
+      .grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .contact{
+        grid-template-columns:1fr 1fr 1fr 1fr;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
 <div class="container">
@@ -190,20 +279,23 @@ body{
 
     <div class="hero-flex">
       <div class="hero-left">
-        <h1>Learn In-Demand Tech Skills. Build Real Careers.</h1>
-        <p>Join Risevora Techlabs to learn C Language, Python, Embedded Systems, and Digital Marketing with practical training and career guidance.</p>
+        <div class="badge">🚀 Learn. Build. Rise.</div>
+        <h1>Online Training Institute for C Language, Python, Embedded Systems & Digital Marketing</h1>
+        <p>
+          Risevora Techlabs is a practical and career-focused online training institute dedicated to helping students, freshers, beginners, and aspiring professionals build strong technical and digital skills. We provide structured online learning programs in C Language, Python, Embedded Systems, and Digital Marketing to help learners grow with confidence and real understanding.
+        </p>
 
-        <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" class="btn secondary">💬 WhatsApp Us</a>
-        <a href="#form" class="btn primary">Get Course Details</a>
+        <div class="hero-buttons">
+          <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" class="btn secondary">💬 Chat on WhatsApp</a>
+          <a href="#enquiry" class="btn primary">Get Course Details</a>
+        </div>
       </div>
 
-      <div class="form" id="form">
+      <div class="form" id="enquiry">
         <h3>Get Free Course Guidance</h3>
-
         <form action="YOUR_GOOGLE_FORM_LINK" target="_blank">
           <input type="text" placeholder="Your Name" required>
           <input type="tel" placeholder="Phone Number" required>
-
           <select required>
             <option>Select Course</option>
             <option>C Language</option>
@@ -211,47 +303,199 @@ body{
             <option>Embedded Systems</option>
             <option>Digital Marketing</option>
           </select>
-
-          <button class="btn primary">Submit</button>
+          <button class="btn primary">Submit Enquiry</button>
         </form>
       </div>
     </div>
   </section>
 
+  <!-- ABOUT -->
+  <section class="section">
+    <h2>About Risevora Techlabs</h2>
+    <p class="section-intro">
+      Risevora Techlabs is built with a simple mission — to help learners gain meaningful, practical, and career-relevant skills through accessible online training. In today’s competitive world, having only theoretical knowledge is often not enough. Learners need clarity, practical exposure, and confidence to apply what they learn. That is why our training programs are designed to focus on strong fundamentals, concept-based learning, and skill development that supports future career growth.
+    </p>
+    <p class="section-intro">
+      Whether you are just beginning your journey in programming, interested in electronics and embedded systems, or looking to build digital skills for modern business growth, Risevora Techlabs offers structured learning paths to support your goals.
+    </p>
+  </section>
+
   <!-- COURSES -->
   <section class="section">
-    <h2>Our Courses</h2>
+    <h2>Our Online Training Programs</h2>
+    <p class="section-intro">
+      We offer carefully designed training programs in some of today’s most valuable technical and digital skill areas. Each course is intended to help learners understand the subject deeply and build practical confidence.
+    </p>
 
     <div class="grid">
       <div class="card">
-        <h3>C Language</h3>
-        <p>Build strong programming fundamentals and logic.</p>
+        <h3>C Language Course</h3>
+        <p>
+          Our C Language training program is ideal for students and beginners who want to build a strong foundation in programming. C Language plays a major role in understanding core programming logic, syntax, memory handling basics, problem solving, and computational thinking. Learning C helps learners strengthen their programming fundamentals, which can also support future learning in advanced software and technical domains.
+        </p>
       </div>
 
       <div class="card">
-        <h3>Python</h3>
-        <p>Learn coding with real-world projects.</p>
+        <h3>Python Course</h3>
+        <p>
+          Python is one of the most beginner-friendly and widely used programming languages today. Our Python course is designed to help learners understand syntax, logic building, coding structure, and real-world implementation in a clear and practical way. Python is highly valuable for software development, automation, scripting, and modern technology applications, making it an excellent skill for learners at different levels.
+        </p>
       </div>
 
       <div class="card">
-        <h3>Embedded Systems</h3>
-        <p>Develop hardware and IoT solutions.</p>
+        <h3>Embedded Systems Course</h3>
+        <p>
+          Embedded Systems is a highly relevant field for learners interested in electronics, automation, microcontrollers, and IoT technology. This course helps learners understand how hardware and software work together in intelligent devices. From foundational embedded concepts to practical understanding of system-based applications, this program supports learners who want to explore real-world hardware technology and smart device development.
+        </p>
       </div>
 
       <div class="card">
-        <h3>Digital Marketing</h3>
-        <p>Grow businesses with digital strategies.</p>
+        <h3>Digital Marketing Course</h3>
+        <p>
+          Our Digital Marketing course helps learners understand how brands, businesses, and professionals grow online using modern digital strategies. This program introduces practical concepts related to online visibility, content-driven growth, branding, social platforms, and digital outreach. It is highly useful for students, freelancers, business-minded learners, and anyone who wants to build relevant online growth skills.
+        </p>
       </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE -->
+  <section class="section">
+    <h2>Why Choose Risevora Techlabs?</h2>
+    <div class="points">
+      <div class="point">✔ Practical and concept-based learning approach</div>
+      <div class="point">✔ Beginner-friendly online training environment</div>
+      <div class="point">✔ Career-focused skill development</div>
+      <div class="point">✔ Clear explanation of technical and digital concepts</div>
+      <div class="point">✔ Suitable for students, freshers, and aspiring professionals</div>
+      <div class="point">✔ Training designed to improve confidence and understanding</div>
+      <div class="point">✔ Flexible online learning accessibility</div>
+      <div class="point">✔ Guidance to help learners choose the right path</div>
+    </div>
+  </section>
+
+  <!-- WHO CAN JOIN -->
+  <section class="section">
+    <h2>Who Can Join Our Courses?</h2>
+    <p class="section-intro">
+      Risevora Techlabs is designed for a wide range of learners who want to improve their technical, programming, or digital skills in a structured and supportive environment.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Students</h3>
+        <p>Students who want to strengthen academic understanding and build future-ready practical skills.</p>
+      </div>
+
+      <div class="card">
+        <h3>Freshers</h3>
+        <p>Fresh graduates and beginners who want to improve confidence and career readiness through skill development.</p>
+      </div>
+
+      <div class="card">
+        <h3>Beginners</h3>
+        <p>Learners starting from scratch who need structured and beginner-friendly guidance.</p>
+      </div>
+
+      <div class="card">
+        <h3>Skill Builders</h3>
+        <p>Individuals who want to upgrade their knowledge in programming, embedded technology, or digital growth.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEARNING OUTCOMES -->
+  <section class="section">
+    <h2>What You Can Gain from Our Training</h2>
+    <div class="points">
+      <div class="point">✔ Better understanding of core technical concepts</div>
+      <div class="point">✔ Improved logic building and structured thinking</div>
+      <div class="point">✔ Stronger practical confidence in chosen domain</div>
+      <div class="point">✔ Skill-based learning for future growth</div>
+      <div class="point">✔ Clarity in applying knowledge beyond theory</div>
+      <div class="point">✔ Improved readiness for career development</div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section">
+    <h2>How Learning at Risevora Techlabs Works</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Step 1: Choose Your Course</h3>
+        <p>Select the course that best matches your interest, learning level, and future goals.</p>
+      </div>
+
+      <div class="card">
+        <h3>Step 2: Get Guidance</h3>
+        <p>Connect with us to understand course details, learning path, and suitable training options.</p>
+      </div>
+
+      <div class="card">
+        <h3>Step 3: Start Learning Online</h3>
+        <p>Join our structured online learning experience and begin building practical knowledge.</p>
+      </div>
+
+      <div class="card">
+        <h3>Step 4: Build Skills with Confidence</h3>
+        <p>Improve your understanding and grow your confidence in technical and digital domains.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <h2>Start Your Learning Journey with Risevora Techlabs</h2>
+    <p class="section-intro">
+      If you are looking for an online training institute that focuses on practical understanding, skill-building, and career-relevant learning, Risevora Techlabs is here to support your journey.
+    </p>
+    <p style="text-align:center;">
+      <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" class="btn secondary">Talk to Us on WhatsApp</a>
+      <a href="#enquiry" class="btn primary">Enquire Now</a>
+    </p>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <h3>What courses does Risevora Techlabs offer?</h3>
+      <p>Risevora Techlabs offers online training in C Language, Python, Embedded Systems, and Digital Marketing.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Is Risevora Techlabs suitable for beginners?</h3>
+      <p>Yes. Our courses are designed to support beginners, students, freshers, and learners who want to start from the basics.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Why should I learn C Language or Python?</h3>
+      <p>C Language and Python are highly valuable for building programming logic, software fundamentals, and future technical learning pathways.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Who should learn Embedded Systems?</h3>
+      <p>Embedded Systems is ideal for learners interested in electronics, smart devices, automation, and hardware-related technology.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Is Digital Marketing a good skill to learn today?</h3>
+      <p>Yes. Digital Marketing is highly relevant for modern business growth, branding, online visibility, and digital career opportunities.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How can I get course details?</h3>
+      <p>You can fill out the enquiry form on this page or contact us directly on WhatsApp for guidance and course information.</p>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section class="section">
-    <h2>Contact Us</h2>
-
+    <h2>Contact Risevora Techlabs</h2>
     <div class="contact">
       <div>📞 YOUR_PHONE</div>
       <div>📧 YOUR_EMAIL</div>
+      <div>📍 YOUR_LOCATION</div>
       <div><a href="https://wa.me/YOUR_WHATSAPP_NUMBER">💬 Chat on WhatsApp</a></div>
     </div>
   </section>
