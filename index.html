@@ -473,6 +473,65 @@
         grid-template-columns:1fr 1fr 1fr 1fr;
       }
     }
+
+    /* ===== MOBILE + EMBED FIX (CRITICAL) ===== */
+    html, body {
+      height: auto !important;
+      min-height: 100%;
+      overflow-x: hidden;
+    }
+
+    .container {
+      display: block;
+      overflow: visible !important;
+    }
+
+    section, .section {
+      display: block;
+      width: 100%;
+      clear: both;
+    }
+
+    .cta-band,
+    .contact,
+    .social-section,
+    .footer,
+    .faq-item {
+      position: relative;
+      z-index: 2;
+      overflow: visible !important;
+    }
+
+    @media(max-width:768px){
+
+      body{
+        height:auto !important;
+      }
+
+      .container{
+        height:auto !important;
+      }
+
+      .section{
+        padding:40px 0;
+      }
+
+      .cta-band{
+        padding:22px 16px;
+      }
+
+      .contact{
+        grid-template-columns:1fr !important;
+      }
+
+      .grid, .points, .contact{
+        overflow:visible !important;
+      }
+
+      .footer{
+        margin-bottom:40px;
+      }
+    }
   </style>
 </head>
 <body>
