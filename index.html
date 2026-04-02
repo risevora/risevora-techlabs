@@ -155,12 +155,14 @@
       margin-bottom:10px;
       color:#00a88f;
       font-size:1.35rem;
+      text-align:center;
     }
 
     .form p{
       color:#6b7280;
       font-size:.95rem;
       margin-bottom:16px;
+      text-align:center;
     }
 
     .form input,.form select{
@@ -199,19 +201,36 @@
       margin:0 auto 34px;
     }
 
-    /* ABOUT IMAGE */
-    .about-image{
+    /* ABOUT BLOCK */
+    .about-block{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:24px;
+      align-items:center;
       margin-top:30px;
-      text-align:center;
+      background:#f9fafb;
+      border:1px solid #e5e7eb;
+      border-radius:24px;
+      padding:24px;
+      box-shadow:0 12px 30px rgba(0,0,0,0.05);
     }
 
-    .about-image img{
+    .about-block img{
       width:100%;
-      max-width:900px;
       border-radius:22px;
       object-fit:cover;
-      max-height:420px;
-      box-shadow:0 18px 40px rgba(0,0,0,0.08);
+      max-height:380px;
+    }
+
+    .about-content h3{
+      color:#00a88f;
+      margin-bottom:12px;
+      font-size:1.45rem;
+    }
+
+    .about-content p{
+      color:#4b5563;
+      margin-bottom:14px;
     }
 
     /* GRID */
@@ -276,37 +295,16 @@
       border-color:#b6f2e7;
     }
 
-    /* FAQ */
-    .faq-item{
-      background:#ffffff;
-      border:1px solid #e5e7eb;
-      padding:20px;
-      border-radius:18px;
-      margin-bottom:14px;
-      transition:.3s ease;
-      box-shadow:0 6px 20px rgba(0,0,0,0.04);
-    }
-
-    .faq-item:hover{
-      border-color:#b6f2e7;
-    }
-
-    .faq-item h3{
-      margin-top:0;
-      color:#00a88f;
-      font-size:1.05rem;
-      margin-bottom:8px;
-    }
-
-    .faq-item p{
-      color:#4b5563;
-      margin-bottom:0;
-    }
-
     /* CONTACT */
+    .contact-wrap{
+      text-align:center;
+    }
+
     .contact{
       display:grid;
       gap:14px;
+      max-width:1000px;
+      margin:0 auto;
     }
 
     .contact div{
@@ -317,6 +315,8 @@
       text-align:center;
       transition:.3s ease;
       box-shadow:0 6px 20px rgba(0,0,0,0.04);
+      color:#111827;
+      font-weight:500;
     }
 
     .contact div:hover{
@@ -423,6 +423,10 @@
         flex:0.95;
       }
 
+      .about-block{
+        grid-template-columns:1fr 1fr;
+      }
+
       .grid{
         grid-template-columns:1fr 1fr;
       }
@@ -464,8 +468,7 @@
     .cta-band,
     .contact,
     .social-section,
-    .footer,
-    .faq-item {
+    .footer {
       position: relative;
       z-index: 2;
       overflow: visible !important;
@@ -548,14 +551,20 @@
     <section class="section">
       <h2>Trainer-Led Online Learning That Helps You Build Real Skills</h2>
       <p class="section-intro">
-        Risevora Techlabs is built for learners who want more than passive video content. Our training is delivered through live trainer-led online sessions that help students and beginners learn in a structured, interactive, and practical way. Instead of learning in isolation, learners get guided support, clearer explanations, and a better understanding of concepts through live instruction.
-      </p>
-      <p class="section-intro">
-        Whether you are learning programming for the first time, exploring embedded technology, or building digital growth skills, our live online training model is designed to improve engagement, confidence, and learning outcomes.
+        Risevora Techlabs is built for learners who want more than passive video content. Our training is delivered through live trainer-led online sessions that help students and beginners learn in a structured, interactive, and practical way.
       </p>
 
-      <div class="about-image">
+      <div class="about-block">
         <img src="images/trainer-session.jpg" alt="Trainer-Led Online Sessions">
+        <div class="about-content">
+          <h3>Learn Better Through Live Guidance</h3>
+          <p>
+            Instead of learning in isolation, learners get guided support, clearer explanations, and a better understanding of concepts through live instruction.
+          </p>
+          <p>
+            Whether you are learning programming for the first time, exploring embedded technology, or building digital growth skills, our live online training model is designed to improve engagement, confidence, and learning outcomes.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -623,42 +632,13 @@
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="section">
-      <h2>Frequently Asked Questions</h2>
-
-      <div class="faq-item">
-        <h3>Are the classes live or recorded?</h3>
-        <p>Risevora Techlabs focuses on trainer-led live online sessions for better interaction, clarity, and guided learning.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>Who can join Risevora Techlabs training programs?</h3>
-        <p>Our courses are suitable for students, freshers, beginners, and anyone looking to build practical technical or digital skills.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>Which courses are available?</h3>
-        <p>We currently offer trainer-led live online training in C Language, Python, Embedded Systems, and Digital Marketing.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>How can I enquire about a course?</h3>
-        <p>You can fill out the Google Form or contact us directly on WhatsApp to get course details and trainer guidance.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>Is this suitable for beginners?</h3>
-        <p>Yes. Our training is designed to be beginner-friendly and supportive for learners starting from the basics.</p>
-      </div>
-    </section>
-
     <!-- CONTACT -->
-    <section class="section">
+    <section class="section contact-wrap">
       <h2>Contact Risevora Techlabs</h2>
       <div class="contact">
         <div>📞 9121990099</div>
-        <div>risevoratechlabs@gmail.com</div>
+        <div>📧 risevoratechlabs@gmail.com</div>
+        <div>📍 India</div>
         <div><a href="https://wa.me/919121990099?text=Hi%20I%20want%20details%20about%20Risevora%20Techlabs%20courses" target="_blank">💬 Chat on WhatsApp</a></div>
       </div>
     </section>
