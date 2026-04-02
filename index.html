@@ -17,7 +17,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
   <style>
@@ -33,11 +32,8 @@
     }
 
     body{
-      background:
-        radial-gradient(circle at top left, rgba(0,229,195,0.12), transparent 25%),
-        radial-gradient(circle at bottom right, rgba(109,125,255,0.15), transparent 30%),
-        #0b1020;
-      color:#fff;
+      background:#ffffff;
+      color:#1a1a1a;
       overflow-x:hidden;
       line-height:1.75;
     }
@@ -52,19 +48,6 @@
       z-index:2;
     }
 
-    .glow{
-      position:absolute;
-      width:260px;
-      height:260px;
-      border-radius:50%;
-      background:rgba(0,229,195,0.08);
-      filter:blur(90px);
-      z-index:0;
-    }
-
-    .glow.one{top:20px;left:-80px;}
-    .glow.two{bottom:100px;right:-80px;background:rgba(109,125,255,0.12);}
-
     /* HERO */
     .hero{
       padding:55px 0 50px;
@@ -77,9 +60,10 @@
       text-align:center;
       margin-bottom:26px;
       letter-spacing:.3px;
+      color:#111827;
     }
 
-    .logo span{color:#00e5c3;}
+    .logo span{color:#00bfa5;}
 
     .hero-flex{
       display:flex;
@@ -94,14 +78,13 @@
 
     .badge{
       display:inline-block;
-      background:rgba(255,255,255,0.06);
-      border:1px solid rgba(255,255,255,0.08);
-      color:#00e5c3;
+      background:#e8fffb;
+      border:1px solid #b6f2e7;
+      color:#00a88f;
       padding:9px 18px;
       border-radius:40px;
       font-size:.9rem;
       margin-bottom:18px;
-      backdrop-filter:blur(12px);
     }
 
     .hero h1{
@@ -109,16 +92,15 @@
       line-height:1.15;
       margin:10px 0 16px;
       font-weight:800;
+      color:#111827;
     }
 
     .hero h1 span{
-      background:linear-gradient(135deg,#00e5c3,#7de9ff);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
+      color:#00bfa5;
     }
 
     .hero p{
-      color:#c9c9d4;
+      color:#4b5563;
       font-size:1.02rem;
       max-width:760px;
       margin:auto;
@@ -147,36 +129,36 @@
     }
 
     .primary{
-      background:linear-gradient(135deg,#00e5c3,#6d7dff);
-      box-shadow:0 12px 28px rgba(109,125,255,0.22);
+      background:linear-gradient(135deg,#00bfa5,#4f8cff);
+      color:#fff;
+      box-shadow:0 12px 28px rgba(79,140,255,0.18);
     }
 
     .secondary{
-      background:rgba(255,255,255,0.06);
-      border:1px solid rgba(255,255,255,0.08);
-      backdrop-filter:blur(10px);
+      background:#f3f4f6;
+      border:1px solid #e5e7eb;
+      color:#111827;
     }
 
     /* FORM */
     .form{
-      background:rgba(255,255,255,0.06);
-      border:1px solid rgba(255,255,255,0.08);
-      backdrop-filter:blur(18px);
+      background:#ffffff;
+      border:1px solid #e5e7eb;
       padding:24px;
       border-radius:22px;
       width:100%;
-      box-shadow:0 18px 50px rgba(0,0,0,0.22);
+      box-shadow:0 18px 50px rgba(0,0,0,0.08);
     }
 
     .form h3{
       margin-top:0;
       margin-bottom:10px;
-      color:#00e5c3;
+      color:#00a88f;
       font-size:1.35rem;
     }
 
     .form p{
-      color:#c9c9d4;
+      color:#6b7280;
       font-size:.95rem;
       margin-bottom:16px;
     }
@@ -186,9 +168,9 @@
       padding:13px;
       margin-bottom:12px;
       border-radius:12px;
-      border:1px solid rgba(255,255,255,0.08);
-      background:rgba(11,16,32,0.9);
-      color:#fff;
+      border:1px solid #d1d5db;
+      background:#ffffff;
+      color:#111827;
       box-sizing:border-box;
       outline:none;
     }
@@ -207,13 +189,48 @@
       text-align:center;
       font-size:2rem;
       margin-bottom:14px;
+      color:#111827;
     }
 
     .section-intro{
       text-align:center;
-      color:#c9c9d4;
+      color:#4b5563;
       max-width:920px;
       margin:0 auto 34px;
+    }
+
+    /* ABOUT IMAGE BOX */
+    .about-box{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:24px;
+      align-items:center;
+      margin-top:30px;
+    }
+
+    .about-box img{
+      width:100%;
+      border-radius:22px;
+      object-fit:cover;
+      max-height:360px;
+      box-shadow:0 18px 40px rgba(0,0,0,0.08);
+    }
+
+    .about-text{
+      background:#f9fafb;
+      border:1px solid #e5e7eb;
+      padding:24px;
+      border-radius:22px;
+    }
+
+    .about-text h3{
+      color:#00a88f;
+      margin-bottom:12px;
+      font-size:1.4rem;
+    }
+
+    .about-text p{
+      color:#4b5563;
     }
 
     /* GRID */
@@ -224,19 +241,18 @@
     }
 
     .card{
-      background:rgba(255,255,255,0.06);
-      border:1px solid rgba(255,255,255,0.08);
-      backdrop-filter:blur(16px);
+      background:#ffffff;
+      border:1px solid #e5e7eb;
       padding:22px;
       border-radius:22px;
       transition:.35s ease;
-      box-shadow:0 10px 30px rgba(0,0,0,0.12);
+      box-shadow:0 10px 30px rgba(0,0,0,0.06);
     }
 
     .card:hover{
       transform:translateY(-8px);
-      border-color:rgba(0,229,195,0.25);
-      box-shadow:0 18px 40px rgba(0,0,0,0.20);
+      border-color:#b6f2e7;
+      box-shadow:0 18px 40px rgba(0,0,0,0.10);
     }
 
     .card img{
@@ -249,12 +265,12 @@
 
     .card h3{
       margin-top:0;
-      color:#00e5c3;
+      color:#00a88f;
       margin-bottom:10px;
     }
 
     .card p{
-      color:#d8d8df;
+      color:#4b5563;
       font-size:.96rem;
     }
 
@@ -266,70 +282,43 @@
     }
 
     .point{
-      background:rgba(255,255,255,0.05);
-      border:1px solid rgba(255,255,255,0.08);
+      background:#f9fafb;
+      border:1px solid #e5e7eb;
       padding:18px;
       border-radius:18px;
       transition:.3s ease;
+      color:#111827;
     }
 
     .point:hover{
       transform:translateY(-4px);
-      border-color:rgba(0,229,195,0.22);
-    }
-
-    /* TRAINER SECTION */
-    .trainer-box{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:24px;
-      align-items:center;
-      background:rgba(255,255,255,0.05);
-      border:1px solid rgba(255,255,255,0.08);
-      padding:24px;
-      border-radius:24px;
-    }
-
-    .trainer-box img{
-      width:100%;
-      border-radius:22px;
-      object-fit:cover;
-      max-height:360px;
-    }
-
-    .trainer-box h3{
-      color:#00e5c3;
-      margin-bottom:12px;
-      font-size:1.5rem;
-    }
-
-    .trainer-box p{
-      color:#d8d8df;
+      border-color:#b6f2e7;
     }
 
     /* FAQ */
     .faq-item{
-      background:rgba(255,255,255,0.06);
-      border:1px solid rgba(255,255,255,0.08);
+      background:#ffffff;
+      border:1px solid #e5e7eb;
       padding:20px;
       border-radius:18px;
       margin-bottom:14px;
       transition:.3s ease;
+      box-shadow:0 6px 20px rgba(0,0,0,0.04);
     }
 
     .faq-item:hover{
-      border-color:rgba(0,229,195,0.22);
+      border-color:#b6f2e7;
     }
 
     .faq-item h3{
       margin-top:0;
-      color:#00e5c3;
+      color:#00a88f;
       font-size:1.05rem;
       margin-bottom:8px;
     }
 
     .faq-item p{
-      color:#d8d8df;
+      color:#4b5563;
       margin-bottom:0;
     }
 
@@ -340,24 +329,25 @@
     }
 
     .contact div{
-      background:rgba(255,255,255,0.06);
-      border:1px solid rgba(255,255,255,0.08);
+      background:#ffffff;
+      border:1px solid #e5e7eb;
       padding:18px;
       border-radius:16px;
       text-align:center;
       transition:.3s ease;
+      box-shadow:0 6px 20px rgba(0,0,0,0.04);
     }
 
     .contact div:hover{
       transform:translateY(-5px);
-      border-color:rgba(0,229,195,0.22);
+      border-color:#b6f2e7;
     }
 
     /* CTA BAND */
     .cta-band{
       text-align:center;
-      background:linear-gradient(135deg, rgba(0,229,195,0.10), rgba(109,125,255,0.10));
-      border:1px solid rgba(255,255,255,0.08);
+      background:linear-gradient(135deg,#e8fffb,#eef4ff);
+      border:1px solid #dbeafe;
       padding:28px;
       border-radius:24px;
     }
@@ -365,10 +355,11 @@
     .cta-band h3{
       font-size:1.8rem;
       margin-bottom:10px;
+      color:#111827;
     }
 
     .cta-band p{
-      color:#d8d8df;
+      color:#4b5563;
       margin-bottom:18px;
     }
 
@@ -380,7 +371,7 @@
 
     .social-section h3{
       margin-bottom:18px;
-      color:#00e5c3;
+      color:#00a88f;
       font-size:1.25rem;
     }
 
@@ -398,25 +389,26 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      background:rgba(255,255,255,0.06);
-      border:1px solid rgba(255,255,255,0.08);
+      background:#ffffff;
+      border:1px solid #e5e7eb;
       font-size:1.25rem;
       transition:.3s ease;
-      box-shadow:0 8px 20px rgba(0,0,0,0.15);
+      box-shadow:0 8px 20px rgba(0,0,0,0.08);
+      color:#111827;
     }
 
     .social-icons a:hover{
       transform:translateY(-5px) scale(1.05);
-      border-color:rgba(0,229,195,0.28);
-      background:linear-gradient(135deg,#00e5c3,#6d7dff);
+      border-color:#b6f2e7;
+      background:linear-gradient(135deg,#00bfa5,#4f8cff);
       color:#fff;
     }
 
     /* FOOTER */
     .footer{
       text-align:center;
-      font-size:.85rem;
-      color:#aaa;
+      font-size:.9rem;
+      color:#6b7280;
       padding:24px 0 30px;
     }
 
@@ -450,15 +442,15 @@
         flex:0.95;
       }
 
+      .about-box{
+        grid-template-columns:1fr 1fr;
+      }
+
       .grid{
         grid-template-columns:1fr 1fr;
       }
 
       .points{
-        grid-template-columns:1fr 1fr;
-      }
-
-      .trainer-box{
         grid-template-columns:1fr 1fr;
       }
 
@@ -474,7 +466,7 @@
       }
     }
 
-    /* ===== MOBILE + EMBED FIX (CRITICAL) ===== */
+    /* ===== MOBILE + EMBED FIX ===== */
     html, body {
       height: auto !important;
       min-height: 100%;
@@ -503,7 +495,6 @@
     }
 
     @media(max-width:768px){
-
       body{
         height:auto !important;
       }
@@ -535,9 +526,6 @@
   </style>
 </head>
 <body>
-
-  <div class="glow one"></div>
-  <div class="glow two"></div>
 
   <div class="container">
 
@@ -588,6 +576,20 @@
       <p class="section-intro">
         Whether you are learning programming for the first time, exploring embedded technology, or building digital growth skills, our live online training model is designed to improve engagement, confidence, and learning outcomes.
       </p>
+
+      <div class="about-box">
+        <img src="images/trainer-session.jpg" alt="Trainer-Led Online Sessions">
+        <div class="about-text">
+          <h3>Interactive Live Sessions Designed for Better Learning</h3>
+          <p>
+            At Risevora Techlabs, learning is guided — not left to chance. Our trainer-led online sessions are designed to help learners understand concepts clearly, stay consistent, and gain confidence step by step. This creates a more engaging and effective learning experience for students, freshers, and beginners who need clarity, support, and structured progress.
+          </p>
+          <br>
+          <p>
+            Our goal is not just to “cover topics” — but to help learners truly understand what they are learning and move forward with stronger practical confidence.
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- WHO CAN JOIN -->
@@ -641,26 +643,6 @@
           <p>
             Learn how businesses grow online through trainer-led Digital Marketing sessions covering modern online visibility, branding, digital communication, and growth-oriented marketing skills.
           </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- TRAINER-LED SECTION -->
-    <section class="section">
-      <h2>Guided Learning with Trainer Support</h2>
-      <div class="trainer-box">
-        <img src="images/trainer-session.jpg" alt="Trainer-Led Online Sessions">
-        <div>
-          <h3>Interactive Live Sessions Designed for Better Learning</h3>
-          <p>
-            At Risevora Techlabs, learning is guided — not left to chance. Our trainer-led online sessions are designed to help learners understand concepts clearly, stay consistent, and gain confidence step by step. This creates a more engaging and effective learning experience for students, freshers, and beginners who need clarity, support, and structured progress.
-          </p>
-          <br>
-          <p>
-            Our goal is not just to “cover topics” — but to help learners truly understand what they are learning and move forward with stronger practical confidence.
-          </p>
-          <br>
-          <a href="https://forms.gle/BKCxaCLbTh4VPpmJ9" target="_blank" class="btn primary">Talk to a Trainer</a>
         </div>
       </div>
     </section>
