@@ -18,7 +18,9 @@
       font-family:'Poppins',sans-serif;
     }
 
-    html,body{
+    html, body{
+      width:100%;
+      min-height:100%;
       overflow-x:hidden;
       scroll-behavior:smooth;
       background:#fff;
@@ -38,7 +40,8 @@
       width:92%;
       max-width:1100px;
       margin:auto;
-      padding-bottom:40px;
+      padding-bottom:50px;
+      overflow:visible !important;
     }
 
     .logo{
@@ -53,13 +56,24 @@
       color:#00bfa5;
     }
 
+    /* HERO */
     .hero{
+      padding-bottom:35px;
+    }
+
+    .hero-wrap{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:26px;
+      align-items:center;
+    }
+
+    .hero-left{
       text-align:center;
-      padding-bottom:30px;
     }
 
     .hero h1{
-      font-size:clamp(1.9rem,4vw,2.8rem);
+      font-size:clamp(2rem,4vw,3rem);
       margin-bottom:12px;
       line-height:1.2;
       color:#111827;
@@ -71,7 +85,7 @@
 
     .hero p{
       color:#555;
-      max-width:760px;
+      max-width:650px;
       margin:0 auto;
     }
 
@@ -108,16 +122,14 @@
       border:1px solid #ddd;
     }
 
+    /* FORM */
     .form{
-      margin-top:24px;
       border:1px solid #ddd;
       padding:22px;
       border-radius:18px;
       background:#fff;
       box-shadow:0 8px 22px rgba(0,0,0,.05);
-      max-width:520px;
-      margin-left:auto;
-      margin-right:auto;
+      width:100%;
     }
 
     .form h3{
@@ -152,8 +164,11 @@
       cursor:pointer;
     }
 
+    /* SECTIONS */
     .section{
-      padding:34px 0;
+      padding:32px 0;
+      display:block;
+      clear:both;
     }
 
     .section h2{
@@ -170,35 +185,6 @@
       max-width:860px;
       margin-left:auto;
       margin-right:auto;
-    }
-
-    .about-block{
-      display:grid;
-      gap:20px;
-      align-items:center;
-      background:#f9fafb;
-      border:1px solid #e5e7eb;
-      border-radius:20px;
-      padding:20px;
-    }
-
-    .about-block img{
-      width:100%;
-      border-radius:16px;
-      max-height:320px;
-      object-fit:cover;
-    }
-
-    .about-content h3{
-      color:#00a88f;
-      margin-bottom:10px;
-      font-size:1.3rem;
-    }
-
-    .about-content p{
-      text-align:left;
-      margin-bottom:12px;
-      color:#555;
     }
 
     .points{
@@ -244,6 +230,7 @@
       background:#fff;
       box-shadow:0 8px 22px rgba(0,0,0,.04);
       transition:.25s ease;
+      min-height:140px;
     }
 
     .card:hover{
@@ -264,6 +251,7 @@
       font-size:.96rem;
     }
 
+    /* CONTACT */
     .contact{
       display:grid;
       gap:12px;
@@ -286,6 +274,7 @@
       color:#111827;
     }
 
+    /* SOCIAL */
     .social{
       text-align:center;
       margin-top:20px;
@@ -329,11 +318,25 @@
       margin-top:24px;
       color:#777;
       font-size:.9rem;
+      padding-bottom:20px;
     }
 
+    /* TABLET / DESKTOP */
     @media(min-width:768px){
-      .about-block{
-        grid-template-columns:1fr 1fr;
+      .hero-wrap{
+        grid-template-columns:1.05fr .95fr;
+      }
+
+      .hero-left{
+        text-align:left;
+      }
+
+      .hero p{
+        margin:0;
+      }
+
+      .hero-buttons{
+        justify-content:flex-start;
       }
 
       .points{
@@ -349,11 +352,16 @@
       }
     }
 
-    /* Google Sites Safe */
-    html, body, .container, section, .section {
+    /* GOOGLE SITES / CHROME EMBED SAFE */
+    html, body, .container, section, .section, .hero, .grid, .contact, .social, .footer {
       height:auto !important;
       min-height:unset !important;
       overflow:visible !important;
+      position:relative;
+    }
+
+    iframe, embed, object {
+      max-width:100%;
     }
   </style>
 </head>
@@ -366,45 +374,36 @@
 
   <!-- HERO -->
   <section class="hero">
-    <h1>Master <span>In-Demand Tech Skills</span></h1>
-    <p>Trainer-led live online training in C Language, Python, Embedded Systems & Digital Marketing.</p>
+    <div class="hero-wrap">
 
-    <div class="hero-buttons">
-      <a href="https://forms.gle/BKCxaCLbTh4VPpmJ9" class="btn primary" target="_blank">Get Course Details</a>
-      <a href="https://forms.gle/BKCxaCLbTh4VPpmJ9" class="btn secondary" target="_blank">Book Free Demo</a>
-      <a href="https://wa.me/919121990099?text=Hi%20I%20want%20details%20about%20Risevora%20Techlabs%20courses" class="btn secondary" target="_blank">Chat on WhatsApp</a>
-    </div>
+      <div class="hero-left">
+        <h1>Master <span>In-Demand Tech Skills</span></h1>
+        <p>Trainer-led live online training in C Language, Python, Embedded Systems & Digital Marketing.</p>
 
-    <div class="form">
-      <h3>Talk to a Trainer</h3>
-      <p>Get course details, batch information, and guidance on choosing the right training program.</p>
-      <form action="https://forms.gle/BKCxaCLbTh4VPpmJ9" target="_blank">
-        <input type="text" placeholder="Your Name" required>
-        <input type="tel" placeholder="Phone Number" required>
-        <select required>
-          <option>Select Course</option>
-          <option>C Language</option>
-          <option>Python</option>
-          <option>Embedded Systems</option>
-          <option>Digital Marketing</option>
-        </select>
-        <button class="btn primary">Submit Enquiry</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="section">
-    <h2>Trainer-Led Online Learning That Helps You Build Real Skills</h2>
-    <p>Risevora Techlabs is built for learners who want more than passive video content. Our training is delivered through live trainer-led online sessions that help students and beginners learn in a structured, interactive, and practical way.</p>
-
-    <div class="about-block">
-      <img src="images/trainer-session.jpg" alt="Trainer-Led Online Sessions">
-      <div class="about-content">
-        <h3>Learn Better Through Live Guidance</h3>
-        <p>Instead of learning in isolation, learners get guided support, clearer explanations, and a better understanding of concepts through live instruction.</p>
-        <p>Whether you are learning programming for the first time, exploring embedded technology, or building digital growth skills, our live online training model is designed to improve engagement, confidence, and learning outcomes.</p>
+        <div class="hero-buttons">
+          <a href="https://forms.gle/BKCxaCLbTh4VPpmJ9" class="btn primary" target="_blank">Get Course Details</a>
+          <a href="https://forms.gle/BKCxaCLbTh4VPpmJ9" class="btn secondary" target="_blank">Book Free Demo</a>
+          <a href="https://wa.me/919121990099?text=Hi%20I%20want%20details%20about%20Risevora%20Techlabs%20courses" class="btn secondary" target="_blank">Chat on WhatsApp</a>
+        </div>
       </div>
+
+      <div class="form">
+        <h3>Talk to a Trainer</h3>
+        <p>Get course details, batch information, and guidance on choosing the right training program.</p>
+        <form action="https://forms.gle/BKCxaCLbTh4VPpmJ9" target="_blank">
+          <input type="text" placeholder="Your Name" required>
+          <input type="tel" placeholder="Phone Number" required>
+          <select required>
+            <option>Select Course</option>
+            <option>C Language</option>
+            <option>Python</option>
+            <option>Embedded Systems</option>
+            <option>Digital Marketing</option>
+          </select>
+          <button class="btn primary">Submit Enquiry</button>
+        </form>
+      </div>
+
     </div>
   </section>
 
